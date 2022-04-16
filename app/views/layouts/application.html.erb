@@ -11,6 +11,28 @@
   </head>
 
   <body>
+    <%= link_to root_path do %>
+    <h3>Success! Job Hunting</h3>
+    <% end %>
+
+    <%= link_to root_path do %>
+    <p>投稿一覧</p>
+    <% end %>
+   <% if user_signed_in? %>
+    <%= link_to destroy_user_session_path do %>
+    <p>ログアウト</p>
+    <% end %>
+
+   <% else %>
+    <%= link_to new_user_registration_path do %>
+    <p>新規登録</p>
+    <% end %>
+
+    <%= link_to new_user_session_path do %>
+    <p>ログイン</p>
+    <% end %>
+  <% end %>
+
     <%= yield %>
   </body>
 </html>

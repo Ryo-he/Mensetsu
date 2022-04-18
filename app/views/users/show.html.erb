@@ -1,1 +1,15 @@
-<h3>マイページ</h3>
+<h3><%= @user.first_name %><%= @user.last_name %>のページ</h3>
+<% if @user.image.attached? %>
+<%= image_tag @user.image, size: "100x100" %>
+<% else %>
+<%= image_tag 'no_image.jpg', size: "100x100" %>
+<% end %>
+
+<%= link_to '投稿一覧', root_path %>
+
+<%= link_to '投稿する', root_path %>
+
+<%= link_to '編集', edit_user_path(@user.id) %>
+<%= link_to '退会', user_unsubscribe_path %>
+
+<li>お気に入り</li>

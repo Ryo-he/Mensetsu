@@ -1,4 +1,6 @@
 <%= form_with model: @experience, url: experience_path(@experience.id), local: true do |f| %>
+<p>タイトル</p>
+<%= f.text_field :title %>
 <p>企業名</p>
 <%= f.text_field :name %>
 <p>業種</p>

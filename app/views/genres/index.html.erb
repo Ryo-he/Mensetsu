@@ -1,2 +1,11 @@
-<h1>Genres#index</h1>
-<p>Find me in app/views/genres/index.html.erb</p>
+<h3>ジャンル一覧・追加</h3>
+<%= form_with model: @genre, url: genres_path, local: true do |f| %>
+<%= f.text_field :name %>
+<%= f.submit '追加' %>
+<% end %>
+
+<% @genres.each do |genre| %>
+<%= genre.name %>
+<%= link_to '編集する' edit_genre_path(genre.id) %>
+<%= link_to '削除する' destroy_genre_path, method: :delete %>
+<% end %>

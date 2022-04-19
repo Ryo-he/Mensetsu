@@ -1,2 +1,28 @@
-<h1>Experiences#show</h1>
-<p>Find me in app/views/experiences/show.html.erb</p>
+<p>ユーザー情報</p>
+<% if @user.image.attached? %>
+<%= image_tag @user.image, size: "100x100" %>
+<% else %>
+<%= image_tag 'no_image.jpg', size: "100x100" %>
+<% end %>
+<%= @user.name %>
+<%= link_to 'マイページ', user_path(@user) %>
+<%= link_to '投稿する', new_experience_path %>
+<h3>投稿詳細</h3>
+<p>タイトル</p>
+<%= @experience.title %>
+<p>企業名</p>
+<%= @experience.name %>
+<p>業種</p>
+<%= @experience.genre.name %>
+<p>選考状況</p>
+<%= @experience.situation %>
+<p>時間</p>
+<%= @experience.time %>
+<p>形式</p>
+<%= @experience.format %>
+<p>雰囲気</p>
+<%= @experience.atomosphere %>
+<p>質問</p>
+<%= @experience.question %>
+<p>感想</p>
+<%= @experience.impression %>

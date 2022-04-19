@@ -3,6 +3,7 @@ class CreateExperiences < ActiveRecord::Migration[6.1]
     create_table :experiences do |t|
       t.integer :user_id
       t.integer :genre_id
+      t.string :title
       t.string :name
       t.string :situation
       t.string :time

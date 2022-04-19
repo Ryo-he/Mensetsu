@@ -19,7 +19,11 @@
     <p>投稿一覧</p>
     <% end %>
    <% if user_signed_in? %>
-    <%= link_to destroy_user_session_path do %>
+    <%= link_to user_path(current_user) do %>
+    <p>マイページ</p>
+    <% end %>
+
+    <%= link_to destroy_user_session_path, method: :delete do %>
     <p>ログアウト</p>
     <% end %>
 

@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
-  get 'experiences/new'
-  get 'experiences/index'
-  get 'experiences/show'
-  get 'experiences/edit'
-  get 'experiences/update'
-  get 'experiences/destroy'
+  get 'genres/index'
+  get 'genres/edit'
+  get 'genres/update'
+  get 'genres/destroy'
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
   root to: 'homes#top'
-  get 'homes/top' => 'homes'
-  devise_for :users
-  get 'user/unsubscribe' => 'users#unsubscribe'
-  patch 'user/withdraw' => 'users#withdraw'
-  resources :user, only: [:show, :edit, :update]
+  get 'homes/top' => 'homes#top'
+  get 'users/unsubscribe' => 'users#unsubscribe'
+  patch 'users/withdraw' => 'users#withdraw'
+  resources :users, only: [:show, :edit, :update]
+  resources :experiences
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

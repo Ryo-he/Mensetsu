@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @experience = Experience.find(params[:id])
+    @experiences = Experience.where(user_id: @user.id)
   end
 
   def edit
@@ -20,7 +22,10 @@ class UsersController < ApplicationController
   def unsubscribe
   end
 
-  def withdraw
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_path
   end
   
   private

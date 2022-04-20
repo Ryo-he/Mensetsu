@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get 'homes/top' => 'homes#top'
   get 'users/unsubscribe' => 'users#unsubscribe'
-  patch 'users/withdraw' => 'users#withdraw'
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update, :destroy]
   resources :experiences
   resources :genres, only: [:index, :edit, :update, :destroy, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

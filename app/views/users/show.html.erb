@@ -5,9 +5,13 @@
 <%= image_tag 'no_image.jpg', size: "100x100" %>
 <% end %>
 
-<%= link_to '投稿一覧', root_path %>
-
-<%= link_to '投稿する', root_path %>
+<h3>投稿一覧</h3>
+<% @experiences.each do |experience| %>
+<%= link_to experience_path(experience.id) do %>
+<%= experience.title %>
+<% end %>
+<% end %>
+<%= link_to '投稿する', new_experience_path %>
 
 <%= link_to '編集', edit_user_path(@user.id) %>
 <%= link_to '退会', users_unsubscribe_path %>

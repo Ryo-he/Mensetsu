@@ -1,5 +1,5 @@
 <h3>投稿編集</h3>
-<%= form_with model: @experience, url: experience_path(@experience), local: true do |f| %>
+<%= form_with model: @experience, url: experience_path(@experience.id), local: true do |f| %>
 <p>タイトル</p>
 <%= f.text_field :title %>
 <p>企業名</p>

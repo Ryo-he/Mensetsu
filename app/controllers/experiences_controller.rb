@@ -9,20 +9,21 @@ class ExperiencesController < ApplicationController
     @experiences = Experience.all
     @genres = Genre.all
   end
-  
+
   def create
     @experience = Experience.new(experience_params)
-  if @experience.save
-    redirect_to experience_path(@experience.id)
-  else
-    @experiences = Experience.all
-    render :new
-  end
+    @experience.user_id = current_user.id
+   if @experience.save
+      redirect_to experience_path(@experience.id)
+   else
+      @genres = Genre.all
+      @experiences = Experience.all
+      render :new
+   end
   end
 
   def show
     @experience = Experience.find(params[:id])
-    @user = User.find(params[:id])
   end
 
   def edit
@@ -32,8 +33,8 @@ class ExperiencesController < ApplicationController
 
   def update
     @experience = Experience.find(params[:id])
-  if @experience.update
-    redirect_to experience_path(@experience)
+  if @experience.update(experience_params)
+    redirect_to experience_path(@experience.id)
   else
     @genres = Genre.all
     render :edit
@@ -45,11 +46,11 @@ class ExperiencesController < ApplicationController
     @experience.destroy
     redirect_to request.referer
   end
- 
+
 private
- 
+
   def experience_params
     params.require(:experience).permit(:genre_id, :title, :name, :situation, :time, :format, :atomosphere, :question, :impression)
   end
- 
+
 end

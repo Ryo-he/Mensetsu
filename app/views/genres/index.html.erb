@@ -6,6 +6,6 @@
 
 <% @genres.each do |genre| %>
 <%= genre.name %>
-<%= link_to '編集する' edit_genre_path(genre.id) %>
-<%= link_to '削除する' destroy_genre_path, method: :delete %>
+<%= link_to '編集する', edit_genre_path(genre.id) %>
+<%= link_to '削除する', genre_path(genre.id), method: :delete %>
 <% end %>

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @experience = Experience.find(params[:id])
     @experiences = Experience.where(user_id: @user.id)
   end
 

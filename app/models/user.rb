@@ -6,5 +6,7 @@ class User < ApplicationRecord
   
   has_one_attached :image
   has_many :experiences
-  
+  def name
+    first_name + last_name
+  end
 end

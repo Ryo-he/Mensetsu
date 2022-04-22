@@ -1,4 +1,4 @@
-<h3><%= @user.first_name %><%= @user.last_name %>のページ</h3>
+<h3><%= @user.name %>のページ</h3>
 <% if @user.image.attached? %>
 <%= image_tag @user.image, size: "100x100" %>
 <% else %>
@@ -10,6 +10,8 @@
 <%= link_to experience_path(experience.id) do %>
 <%= experience.title %>
 <% end %>
+<%= link_to '＋' ,edit_experience_path(experience.id) %>
+<%= link_to '×', experience_path(experience.id), method: :delete, "date-confirm" => "本当に削除しますか？" %>
 <% end %>
 <%= link_to '投稿する', new_experience_path %>
 

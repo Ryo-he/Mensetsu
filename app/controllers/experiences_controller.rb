@@ -8,7 +8,6 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new
     @experiences = Experience.all
     @genres = Genre.all
-    @user = User.find(params[:id])
   end
   
   def create

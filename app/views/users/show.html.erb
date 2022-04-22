@@ -19,3 +19,8 @@
 <%= link_to '退会', users_unsubscribe_path %>
 
 <li>お気に入り</li>
+<% @favorites.each |favorite| do %>
+<%= link_to experience_path(favorite.experience) do %>
+<%= favorite.experience.title %>
+<% end %>
+<% end %>

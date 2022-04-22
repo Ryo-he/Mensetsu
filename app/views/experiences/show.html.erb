@@ -26,3 +26,17 @@
 <%= @experience.question %>
 <p>感想</p>
 <%= @experience.impression %>
+
+<% if @experience.favorited_by?(current_user) %>
+<p>
+<%= link_to experience_favorites_path(@experience), method: :delete do %>
+★ ブックマークを外す
+<% end %>
+</p>
+<% else %>
+<p>
+<%= link_to experience_favorites_path(@experience), method: :post do %>
+☆ ブックマーク 
+<% end %>
+</p>
+<% end %>

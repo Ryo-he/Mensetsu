@@ -12,4 +12,5 @@
 <%= link_to experience_path(experience.id) do %>
 <%= experience.title %>
 <% end %>
+<p>お気に入り数 <%= @experience.favorite.count %></p>
 <% end %>

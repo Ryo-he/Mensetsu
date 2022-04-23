@@ -46,6 +46,11 @@ class ExperiencesController < ApplicationController
     @experience.destroy
     redirect_to request.referer
   end
+  
+  def search
+    selection = params[:sort]
+    @experiences = Experience.sort(selection)
+  end
 
 private
 

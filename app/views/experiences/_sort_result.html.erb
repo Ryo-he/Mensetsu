@@ -1,0 +1,6 @@
+<% experiences.each do |experience| %>
+<%= link_to experience_path(experience.id) do %>
+<%= experience.title %>
+<% end %>
+<p>☆ <%= experience.favorite.count %></p>
+<% end %>

@@ -2,5 +2,16 @@
 <%= link_to experience_path(experience.id) do %>
 <%= experience.title %>
 <% end %>
-<p>☆ <%= experience.favorite.count %></p>
+<p>☆ <%= experience.favorites.count %></p>
+<p>コメント(<%= experience.comments.count %>)</p>
+<%= experience.name %>
+<%= experience.genre.name %>
+<% if current_user.admin? %>
+<% current_user.admin == true %>
+<%= link_to experience_path(experience.id), method: :delete do %>
+<p>投稿削除</p>
+<% end %>
+<% else %>
+<% end %>
+
 <% end %>

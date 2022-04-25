@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   else
     render :edit
   end
-    
+
   end
 
   def unsubscribe
@@ -27,9 +27,10 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to root_path
   end
-  
+
   private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :image)
   end
+
 end

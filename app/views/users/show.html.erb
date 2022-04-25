@@ -10,6 +10,8 @@
 <%= link_to experience_path(experience.id) do %>
 <%= experience.title %>
 <% end %>
+<p>☆ <%= experience.favorites.count %></p>
+<p>コメント(<%= experience.comments.count %>)</p>
 <%= link_to '＋' ,edit_experience_path(experience.id) %>
 <%= link_to '×', experience_path(experience.id), method: :delete, "date-confirm" => "本当に削除しますか？" %>
 <% end %>
@@ -18,8 +20,14 @@
 <%= link_to '編集', edit_user_path(@user.id) %>
 <%= link_to '退会', users_unsubscribe_path %>
 
+<% if current_user.admin? %>
+<% current_user.admin == true %>
+<%= link_to "ジャンル追加・一覧", genres_path %>
+<% else %>
+<% end %>
+
 <li>お気に入り</li>
-<% @favorites.each |favorite| do %>
+<% @favorites.each do |favorite|  %>
 <%= link_to experience_path(favorite.experience) do %>
 <%= favorite.experience.title %>
 <% end %>

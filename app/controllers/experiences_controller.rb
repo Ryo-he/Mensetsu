@@ -24,6 +24,7 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = Experience.find(params[:id])
+    @comment = Comment.new
   end
 
   def edit
@@ -46,11 +47,25 @@ class ExperiencesController < ApplicationController
     @experience.destroy
     redirect_to request.referer
   end
-  
+
   def search
-    selection = params[:sort]
-    @experiences = Experience.sort(selection)
+    if params[:sort] == 'new'
+      @experiences = Experience.all.order(created_at: :DESC)
+    elsif params[:sort] == 'old'
+      @experiences = Experience.all.order(created_at: :ASC)
+    elsif params[:sort] == 'favorite'
+      @experiences = Experience.find(Favorite.group(:experience_id).order('count(experience_id) desc').pluck(:experience_id))
+    elsif params[:sort] == 'unfavorite'
+      @experiences = Experience.find(Favorite.group(:experience_id).order('count(experience_id) asc').pluck(:experience_id))
+    end
   end
+
+  def company_search
+    @experiences = Experience.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
 
 private
 

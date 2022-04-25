@@ -30,13 +30,29 @@
 <% if @experience.favorited_by?(current_user) %>
 <p>
 <%= link_to experience_favorites_path(@experience), method: :delete do %>
-★ ブックマークを外す
+★ お気に入りを解除
 <% end %>
 </p>
 <% else %>
 <p>
 <%= link_to experience_favorites_path(@experience), method: :post do %>
-☆ ブックマーク 
+☆ お気に入り登録
 <% end %>
 </p>
+<% end %>
+<p>コメント<%= @experience.comments.count %>件</p>
+<% @experience.comments.each do |comment| %>
+<%= comment.user.name %>
+<%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.experience_comment %>
+<% if comment.user == current_user %>
+<%= link_to "削除", experience_comment_path(comment.experience, comment), method: :delete %>
+<% end %>
+<% if current_user.admin? %>
+<%= link_to "削除", experience_comment_path(comment.experience, comment), method: :delete %>
+<% end %>
+<% end %>
+
+<%= form_with model: [@experience, @comment] do |f| %>
+<%= f.text_area :experience_comment, rows: '5', placeholder: "コメントをここに" %>
+<%= f.submit "送信する" %>
 <% end %>

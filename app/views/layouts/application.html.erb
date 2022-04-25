@@ -19,6 +19,7 @@
     <p>投稿一覧</p>
     <% end %>
    <% if user_signed_in? %>
+   
     <%= link_to user_path(current_user.id) do %>
     <p>マイページ</p>
     <% end %>

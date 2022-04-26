@@ -1,8 +1,13 @@
+<%= form_with url: company_search_path, method: :get, local: true do |f| %>
+<%= f.text_field :keyword, value: @keyword %>
+<%= f.submit "検索" %>
+<% end %>
+
 <p>ユーザー情報</p>
 <%= render 'user_information' %>
 
 <h3>検索結果</h3>
-<%= render 'sort', experience: @experience %>
+<%= render 'sort' %>
 
 <%= render 'sort_result', experiences: @experiences %>
 

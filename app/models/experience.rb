@@ -1,4 +1,12 @@
 class Experience < ApplicationRecord
+  validates :title, presence: true
+  validates :name, presence: true
+  validates :situation, presence: true
+  validates :time, presence: true
+  validates :format, presence: true
+  validates :atomosphere, presence: true
+  validates :question, presence: true
+  validates :impression, presence: true
   belongs_to :user
   belongs_to :genre
   has_many :favorites, dependent: :destroy
@@ -11,5 +19,5 @@ class Experience < ApplicationRecord
  def self.search(keyword)
   where(["name like?", "%#{keyword}%"])
  end
- 
+
 end

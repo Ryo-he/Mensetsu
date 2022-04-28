@@ -64,6 +64,14 @@ class ExperiencesController < ApplicationController
     render "index"
   end
 
+  def genre_search
+  if params[:genres].blank?
+     @experiences = Experience.all
+  else
+     @experiences = Experience.where(genre_id: params[:genres])
+     render "index"
+  end
+  end
 
 private
 

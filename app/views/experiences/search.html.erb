@@ -4,7 +4,8 @@
 <% end %>
 
 <%= form_with url: genre_search_path , method: :get, local: true do |f| %>
-<%= f.collection_check_boxes :genres, Genre.all, :genre_id, :name %>
+<%= f.collection_check_boxes :genres, Genre.all, :id, :name %>
+<%= f.submit '検索' %>
 <% end %>
 
 <p>ユーザー情報</p>

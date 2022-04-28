@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    attributes:
+      experience:
+        title: タイトル
+	      name: 企業名
+	      situation: 選考状況
+	      time: 時間
+	      format: 形式
+	      atomosphere: 雰囲気
+	      question: 質問
+	      impression: 感想
+ja:
+  activerecord:
+    attributes:
+    comment:
+      experience_comment: コメント

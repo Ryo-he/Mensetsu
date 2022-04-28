@@ -1,5 +1,13 @@
-<p>あなたの体験記</p>
-<%= form_with model: @experience, local: true do |f| %>
+<% if @experience.errors.any? %>
+  <%= @experience.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @experience.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<h3>あなたの体験記</h3>
+<%= form_with model: @experience, url: experiences_path, local: true do |f| %>
 
 <p>タイトル</p>
 <%= f.text_field :title %>
@@ -20,6 +28,6 @@
 <p>感想</p>
 <%= f.text_area :impression, size: "60x10" %>
 
-<%= f.submit '投稿する' %>
+<%= f.submit '投稿' %>
 
 <% end %>

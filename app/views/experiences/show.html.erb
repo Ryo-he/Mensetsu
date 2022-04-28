@@ -40,6 +40,14 @@
 <% end %>
 </p>
 <% end %>
+<% if @comment.errors.any? %>
+  <%= @comment.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @comment.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <p>コメント<%= @experience.comments.count %>件</p>
 <% @experience.comments.each do |comment| %>
 <%= comment.user.name %>

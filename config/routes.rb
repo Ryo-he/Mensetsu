@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   get 'search' => 'experiences#search'
   get 'company_search' => 'experiences#company_search'
+  get 'genre_search' => 'experiences#genre_search'
   resources :genres, only: [:index, :edit, :update, :destroy, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

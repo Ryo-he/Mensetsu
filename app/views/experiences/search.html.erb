@@ -3,6 +3,10 @@
 <%= f.submit "検索" %>
 <% end %>
 
+<%= form_with url: genre_search_path , method: :get, local: true do |f| %>
+<%= f.collection_check_boxes :genres, Genre.all, :genre_id, :name %>
+<% end %>
+
 <p>ユーザー情報</p>
 <%= render 'user_information' %>
 

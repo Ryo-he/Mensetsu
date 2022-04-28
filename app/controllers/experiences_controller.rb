@@ -54,9 +54,7 @@ class ExperiencesController < ApplicationController
     elsif params[:sort] == 'old'
       @experiences = Experience.all.order(created_at: :ASC)
     elsif params[:sort] == 'favorite'
-      @experiences = Experience.find(Favorite.group(:experience_id).order('count(experience_id) desc').pluck(:experience_id))
-    elsif params[:sort] == 'unfavorite'
-      @experiences = Experience.find(Favorite.group(:experience_id).order('count(experience_id) asc').pluck(:experience_id))
+      @experiences = Experience.includes(:favorites).sort {|a,b| b.favorites.size <=> a.favorites.size}
     end
   end
 

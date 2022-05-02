@@ -1,26 +1,26 @@
-<h2>ログイン</h2>
+<body id = "signup">
+<div class="container">
+<div class="row">
+<div class = "mx-auto"></div>
 
 <%= form_with model: @user, url: user_session_path do |f| %>
-  <div class="field">
-    <%= f.label 'メールアドレス' %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class = "login-box">
+<p>ログイン</p>
+<div class = "field">
+<%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'E-mail' %></br>
+</div>
 
-  <div class="field">
-    <%= f.label 'パスワード' %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+<div class = "field">
+<%= f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード' %></br>
+</div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
+<div class = "login-botton">
+<input class="btn btn-primary" type="submit" style="width:220px" value="ログイン">
+</div>
 
-  <div class="actions">
-    <%= f.submit "ログイン" %>
-  </div>
+</div>
 <% end %>
-
-<%= render "users/shared/links" %>
+</div>
+</div>
+</div>
+</body>

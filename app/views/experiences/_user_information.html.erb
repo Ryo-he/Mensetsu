@@ -11,4 +11,11 @@
 
 <% else %>
 
+<%= image_tag 'no_image.jpg', size: "100x100" %>
+<%= link_to new_user_registration_path do %>
+<p>新規登録</p>
+<% end %>
+<%= link_to new_user_session_path do %>
+<p>ログイン</p>
+<% end %>
 <% end %>

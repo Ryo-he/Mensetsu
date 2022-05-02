@@ -1,40 +1,46 @@
-<h2>会員登録</h2>
+<body id = "signup">
+<div class="container">
+<div class="row">
+<div class = "mx-auto"></div>
 
-  <%= form_with model: @user,url: user_registration_path do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label '名前' %><br />
-    <%= f.label '姓' %>
-    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-  </div>
+<%= form_with model: @user,url: user_registration_path do |f| %>
+<%= render "users/shared/error_messages", resource: resource %>
+<div class = "signup-box">
+<p>会員登録</p>
 
-  <div class="field">
-    <%= f.label '名' %><br />
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
-  </div>
+<div class="name-field">
+<%= f.label '名前' %></br>
+<%= f.label '（姓）'%>
+<%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+<%= f.label '（名）' %>
+<%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+</div>
 
-  <div class="field">
-    <%= f.label 'メールアドレス' %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label 'パスワード(6文字以上)' %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+<div class="another-field">
+<%= f.label 'メールアドレス' %></br>
+<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+</div>
 
-  <div class="field">
-    <%= f.label 'パスワード(確認用)' %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+<div class="another-field">
+<%= f.label 'パスワード（6文字以上）' %></br>
+<%= f.password_field :password, autocomplete: "new-password" %>
+</div>
 
-  <div class="actions">
-    <%= f.submit "新規登録" %>
-  </div>
+<div class="another-field">
+<%= f.label 'パスワード（確認用）' %></br>
+<%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+</div>
+
+<div class="signup-botton">
+<input class="btn btn-success" type="submit" style="width:220px" value="新規登録">
+</div>
+
+</div>
 <% end %>
+</div>
+</div>
+</div>
+</body>
 
-<%= render "users/shared/links" %>

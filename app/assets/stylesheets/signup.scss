@@ -1,0 +1,52 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+#signup{
+  background-color: #EEFFFF	;
+  margin: 10px;
+}
+
+.signup-box{
+  background-color: white;
+  margin: 70px auto;
+  width: 650px;
+  height: 420px;
+  padding: 10px;
+  border: 2px solid rgba(0,0,0,0.1);
+}
+
+.login-box{
+  background-color: white;
+  margin: 70px auto;
+  width: 400px;
+  height: 300px;
+  padding: 10px;
+  border: 2px solid rgba(0,0,0,0.1);
+}
+
+.field{
+  padding: 10px;
+  text-align: center;
+}
+
+.name-field{
+  padding: 10px;
+}
+
+.another-field{
+  padding: 7px 20px;
+  margin: 0 40px;
+}
+
+.login-botton{
+  padding: 40px;
+  text-align: center;
+}
+
+.signup-botton{
+  padding: 30px;
+  text-align: center;
+}

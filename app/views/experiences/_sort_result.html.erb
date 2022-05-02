@@ -6,12 +6,14 @@
 <p>コメント(<%= experience.comments.count %>)</p>
 <%= experience.name %>
 <%= experience.genre.name %>
+<% if user_signed_in? %>
 <% if current_user.admin? %>
 <% current_user.admin == true %>
 <%= link_to experience_path(experience.id), method: :delete do %>
 <p>投稿削除</p>
 <% end %>
 <% else %>
+<% end %>
 <% end %>
 
 <% end %>

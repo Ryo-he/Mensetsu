@@ -1,6 +1,16 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+#top{
+  background-image: url(fujiko0822.jpg.webp);
+}
+
 .top-box{
   width: 600px;
   height: 500px;
@@ -8,10 +18,14 @@
 }
 
 .text-box{
-  padding: 0 50px;  
+  padding: 0 50px;
+  text-shadow:1px 1px 3px #000000;
+  background-color: rgba(46, 46, 46, 0.5);
 }
 
 .botton-box{
   margin: 70px auto;
   padding: 0 50px;
+  text-shadow:1px 1px 3px #000000;
+  background-color: rgba(46, 46, 46, 0.5);
 }

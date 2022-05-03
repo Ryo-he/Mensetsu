@@ -6,28 +6,44 @@
     <% end %>
   </ul>
 <% end %>
+<div class="container">
+<div class="row">
+<div class = "mx-auto"></div>
+
 <h3>あなたの体験記</h3>
 <%= form_with model: @experience, url: experiences_path, local: true do |f| %>
-
-<p>タイトル</p>
-<%= f.text_field :title %>
-<p>企業名</p>
-<%= f.text_field :name %>
-<p>業種</p>
-<%= f.collection_select(:genre_id, @genres, :id ,:name, {prompt: "選択してください"}) %>
-<p>選考状況</p>
-<%= f.select :situation, [['一次','一次'],['二次','二次'],['三次','三次'],['三次以降','三次以降'],['最終','最終']], include_blank: "選択して下さい" %>
-<p>時間</p>
-<%= f.select :time, [['30分未満','30分未満'],['約30分','約30分'],['約45分','約45分'],['約1時間','約1時間'],['1時間以上','1時間以上']], include_blank: "選択して下さい" %>
-<p>形式</p>
-<%= f.select :format, [['個人面接(1：1)','個人面接(1：1)'],['個人面接(1：多)','個人面接(1：多)'],['集団面接','集団面接'],['リモート面接','リモート面接']], include_blank: "選択して下さい" %>
+<body id = "experience">
+<div class = "experience-box">
+タイトル</br>
+<%= f.text_field :title %></br>
+</br>
+企業名</br>
+<%= f.text_field :name %></br>
+</br>
+業種</br>
+<%= f.collection_select(:genre_id, @genres, :id ,:name, {prompt: "選択してください"}) %></br>
+</br>
+選考状況</br>
+<%= f.select :situation, [['一次','一次'],['二次','二次'],['三次','三次'],['三次以降','三次以降'],['最終','最終']], include_blank: "選択して下さい" %></br>
+</br>
+時間</br>
+<%= f.select :time, [['30分未満','30分未満'],['約30分','約30分'],['約45分','約45分'],['約1時間','約1時間'],['1時間以上','1時間以上']], include_blank: "選択して下さい" %></br>
+</br>
+形式</br>
+<%= f.select :format, [['個人面接(1：1)','個人面接(1：1)'],['個人面接(1：多)','個人面接(1：多)'],['集団面接','集団面接'],['リモート面接','リモート面接']], include_blank: "選択して下さい" %></br>
+</br>
 <p>雰囲気</p>
 <%= f.text_area :atomosphere, size: "60x5" %>
 <p>質問</p>
 <%= f.text_area :question, size: "60x10" %>
 <p>感想</p>
 <%= f.text_area :impression, size: "60x10" %>
-
-<%= f.submit '投稿' %>
-
+</br>
+<div class = "post-botton">
+<input class="btn btn-primary" type="submit" style="width:220px" value="投稿">
+</div>
 <% end %>
+</div>
+</div>
+</div>
+</body>

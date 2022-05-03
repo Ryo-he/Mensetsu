@@ -16,8 +16,9 @@
   <header class="shadow-sm bg-white">
   <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
+
     <%= link_to root_path do %>
-    <h3>Success! Job Hunting</h3>
+    <h4>Success! Job Hunting</h4>
     <% end %>
 
     <%= link_to experiences_path do %>
@@ -26,7 +27,7 @@
    <% if user_signed_in? %>
 
     <%= link_to user_path(current_user.id) do %>
-    マイページ
+    <p>マイページ</p>
     <% end %>
 
     <%= link_to destroy_user_session_path, method: :delete do %>

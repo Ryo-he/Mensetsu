@@ -1,3 +1,29 @@
 // Place all the styles related to the experiences controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+#experience{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(192, 192, 192, 0.5);
+}
+
+.experience-box{
+  margin: 0 200px;
+  padding: 50px;
+}
+
+h3{
+  margin: 10px;
+  padding: 20px;
+}
+
+.post-botton{
+  padding: 30px;
+  text-align: center;
+}

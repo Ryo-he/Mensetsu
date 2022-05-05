@@ -18,12 +18,36 @@
   padding: 50px;
 }
 
+.experience-box2{
+  margin: 0 400px;
+  padding: 50px;
+}
+
 h3{
-  margin: 10px;
+  margin: 20px 70px;
   padding: 20px;
 }
 
 .post-botton{
   padding: 30px;
   text-align: center;
+}
+
+.genre-search{
+  display:flex;
+  flex-flow: column;
+}
+
+.col-4{
+  margin: 20px 0;
+}
+
+.comment-box{
+  border-top: 1px solid;
+  margin: 0 400px;
+  padding: 50px;
+}
+
+tbody{
+  border-bottom: 1px solid;
 }

@@ -1,17 +1,28 @@
+<div class="container">
+<div class="row">
+<div class = "col-2"></div>
+<div class = "col-6">
+<h3>みんなの投稿</h3>
+<%= render 'sort'%>
+
+<%= render 'sort_result', experiences: @experiences %>
+</div>
+
+<div class = "col-4">
+<p>企業名検索</p>
 <%= form_with url: company_search_path, method: :get, local: true do |f| %>
 <%= f.text_field :keyword, value: @keyword %>
 <%= f.submit "検索" %>
 <% end %>
-
+</br>
+<p>業種検索</p>
 <%= form_with url: genre_search_path , method: :get, local: true do |f| %>
+<div class = "genre-search">
 <%= f.collection_check_boxes :genres, Genre.all, :id, :name %>
 <%= f.submit '検索' %>
+</div>
 <% end %>
 
-<p>ユーザー情報</p>
-<%= render 'user_information' %>
-
-<h3>投稿一覧</h3>
-<%= render 'sort'%>
-
-<%= render 'sort_result', experiences: @experiences %>
+</div>
+</div>
+</div>

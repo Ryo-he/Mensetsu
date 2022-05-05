@@ -1,27 +1,9 @@
-<p>ユーザー情報</p>
-
-<%= render 'user_information' %>
-
+<div class="container">
+<div class="row">
+<div class = "col-8">
 <h3>投稿詳細</h3>
-<p>タイトル</p>
-<%= @experience.title %>
-<p>企業名</p>
-<%= @experience.name %>
-<p>業種</p>
-<%= @experience.genre.name %>
-<p>選考状況</p>
-<%= @experience.situation %>
-<p>時間</p>
-<%= @experience.time %>
-<p>形式</p>
-<%= @experience.format %>
-<p>雰囲気</p>
-<%= @experience.atomosphere %>
-<p>質問</p>
-<%= @experience.question %>
-<p>感想</p>
-<%= @experience.impression %>
-
+</div>
+<div class = "col-4">
 <% if @experience.favorited_by?(current_user) %>
 <p>
 <%= link_to experience_favorites_path(@experience), method: :delete do %>
@@ -35,6 +17,38 @@
 <% end %>
 </p>
 <% end %>
+</div>
+</div>
+</div>
+<div class = "experience-box2">
+タイトル</br>
+<%= @experience.title %></br>
+</br>
+企業名</br>
+<%= @experience.name %></br>
+</br>
+業種</br>
+<%= @experience.genre.name %></br>
+</br>
+選考状況</br>
+<%= @experience.situation %></br>
+</br>
+時間</br>
+<%= @experience.time %></br>
+</br>
+形式</br>
+<%= @experience.format %></br>
+</br>
+<p>雰囲気</p>
+<%= @experience.atomosphere %>
+</br>
+<p>質問</p>
+<%= @experience.question %>
+</br>
+<p>感想</p>
+<%= @experience.impression %>
+</div>
+
 <% if @comment.errors.any? %>
   <%= @comment.errors.count %>件のエラーが発生しました
   <ul>
@@ -43,6 +57,7 @@
     <% end %>
   </ul>
 <% end %>
+<div class = "comment-box">
 <p>コメント<%= @experience.comments.count %>件</p>
 <% @experience.comments.each do |comment| %>
 <%= comment.user.name %>
@@ -56,6 +71,9 @@
 <% end %>
 
 <%= form_with model: [@experience, @comment] do |f| %>
-<%= f.text_area :experience_comment, rows: '5', placeholder: "コメントをここに" %>
-<%= f.submit "送信する" %>
+<%= f.text_area :experience_comment, size: "50x3", placeholder: "コメントをここに" %></br>
+<div class = "post-botton">
+<input class="btn btn-primary" type="submit" style="width:220px" value="コメントを送信する">
+</div>
 <% end %>
+</div>

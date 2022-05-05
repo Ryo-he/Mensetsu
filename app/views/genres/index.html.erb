@@ -1,11 +1,62 @@
+<div class="container">
+<div class="row">
+<div class ="col-ml-4"></div>
 <h3>ジャンル一覧・追加</h3>
-<%= form_with model: @genre, url: genres_path, local: true do |f| %>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class ="col-ml-4"></div>
+<%= form_with model: @genre,url: genres_path, local: true do |f| %>
+<table class = "genre-box">
+<tbody>
+<tr>
+<th>
+業種名
+</th>
+<td>
 <%= f.text_field :name %>
-<%= f.submit '追加' %>
+</td>
+<td>
+ <input class="btn btn-success" type="submit" value="追加">
 <% end %>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class ="col-m-4"></div>
+<table class = "genre-box" width="50%">
+<tbody>
+<tr>
+<th>
+業種名
+</th>
+</tr>
 
 <% @genres.each do |genre| %>
+<tr>
+<td>
 <%= genre.name %>
-<%= link_to '編集する', edit_genre_path(genre.id) %>
-<%= link_to '削除する', genre_path(genre.id), method: :delete %>
+</td>
+<td>
+<%= link_to edit_genre_path(genre.id) do %>
+<button type="button" class="btn btn-success" style="width:150px">編集</button>
 <% end %>
+</td>
+<td>
+<%= link_to genre_path(genre.id), method: :delete do %>
+<button type="button" class="btn btn-danger" style="width:150px">削除する</button>
+<% end %>
+</td>
+</tr>
+<% end %>
+</tbody>
+</table>
+</div>
+</div>

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @experiences = Experience.where(user_id: current_user.id)
     @favorites = Favorite.where(user_id: current_user.id)
+    
   end
 
   def edit
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :image)
+    params.require(:user).permit(:first_name, :last_name, :image, :introduction)
   end
 
 end

@@ -1,19 +1,30 @@
+<table class = "experience-table">
 <% experiences.each do |experience| %>
-<%= link_to experience_path(experience.id) do %>
+<tbody>
+<tr>
+<th><%= link_to experience_path(experience.id) do %>
 <%= experience.title %>
 <% end %>
-<p>☆ <%= experience.favorites.count %></p>
-<p>コメント(<%= experience.comments.count %>)</p>
-<%= experience.name %>
-<%= experience.genre.name %>
+</th>
+<td>☆ <%= experience.favorites.count %></td>
+<td>コメント(<%= experience.comments.count %>)</td>
+</tr>
+<tr>
+<td><%= experience.name %></td>
+<td><%= experience.genre.name %></td>
+</tr>
+<tr>
 <% if user_signed_in? %>
 <% if current_user.admin? %>
 <% current_user.admin == true %>
-<%= link_to experience_path(experience.id), method: :delete do %>
-<p>投稿削除</p>
+<td><%= link_to experience_path(experience.id), method: :delete do %>
+投稿削除
 <% end %>
+</td>
 <% else %>
 <% end %>
 <% end %>
-
+</tr>
+</tbody>
 <% end %>
+</table>

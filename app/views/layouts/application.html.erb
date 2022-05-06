@@ -13,10 +13,10 @@
   </head>
 
   <body class="d-flex flex-column vh-100">
+  <div class = "footer-box">
   <header class="shadow-sm bg-white">
   <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
-
     <%= link_to root_path do %>
     <h4>Success! Job Hunting</h4>
     <% end %>
@@ -43,17 +43,18 @@
     <p>ログイン</p>
     <% end %>
   <% end %>
- </div>
- </nav>
- </header>
+  </div>
+  </nav>
+  </header>
     <%= yield %>
   </body>
- <footer class="bg-dark text-white pt-5 pb-4">
- <div class="container">
- <div class="row no-gutters">
- <div class="col-md-4">
- </div>
- </div>
- </div>
- </footer>
+  <footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container">
+  <div class="row no-gutters">
+  <div class="col-md-4">
+  </div>
+  </div>
+  </div>
+  </footer>
+  </div>
 </html>

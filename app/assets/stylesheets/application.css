@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+.footer-box {
+ display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+}
+
+footer {
+      margin-top: 80px;
+}
+

@@ -23,7 +23,13 @@
   padding: 50px;
 }
 
-h3{
+.experience-list{
+  margin: 20px 70px;
+  padding: 20px;
+  border: 1px solid;
+}
+
+.show{
   margin: 20px 70px;
   padding: 20px;
 }
@@ -40,6 +46,7 @@ h3{
 
 .col-4{
   margin: 20px 0;
+  border: 1px solid;
 }
 
 .comment-box{
@@ -50,4 +57,16 @@ h3{
 
 tbody{
   border-bottom: 1px solid;
+}
+
+.experience-table{
+  margin-left: 70px;
+}
+
+.sort-box{
+  margin-left: 70px;
+}
+
+.company-search{
+  background-color: #CCCCCC;
 }

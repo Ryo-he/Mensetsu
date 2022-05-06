@@ -1,7 +1,8 @@
-<h3>マイページ</h3>
-<table border = "1">
+<h3 class = "user-show"><%= @user.name %>のページ</h3>
+<table class = "user-table">
 <tbody>
 <tr>
+<th>プロフィール画像</th>
 <td><% if @user.image.attached? %>
 <%= image_tag @user.image, size: "200x200" %>
 <% else %>
@@ -9,72 +10,78 @@
 <% end %>
 </td>
 </tr>
-
 <tr>
-<td>ユーザー名</td>
+<th>ユーザー名</th>
 <td><%= @user.name %></td>
 </tr>
 <tr>
-<td>自己紹介</td>
+<th>自己紹介</th>
 <td><%= @user.introduction %></td>
 </tr>
 </tbody>
 </table>
-<%= link_to '投稿する', new_experience_path %>
-</br>
-<%= link_to '編集', edit_user_path(@user.id) %>
-<%= link_to '退会', users_unsubscribe_path %>
-</br>
+<%= link_to '編集する', edit_user_path(@user.id) %>　　　　
+<%= link_to '退会する', users_unsubscribe_path %>
 <% if current_user.admin? %>
 <% current_user.admin == true %>
 <%= link_to "ジャンル追加・一覧", genres_path %>
 <% else %>
 <% end %>
+<h3 class = "user-show">投稿一覧</h3>
+<table class ="list-table">
+<thead>
+<tr>
+<th>タイトル</th>
+<th>投稿設定</th>
+</tr>
+</thead>
 
-<table border = "1">
 <tbody>
 
-<tr>
-<th>
-投稿一覧
-</th>
-</tr>
 
 <% @experiences.each do |experience| %>
 <tr>
 <th>
 <%= link_to experience_path(experience.id) do %>
 <%= experience.title %>
-<% end %>
+<% end %></br>
+☆<%= experience.favorites.count %>　　　　コメント(<%= experience.comments.count %>)
 </th>
-<td>☆ <%= experience.favorites.count %></td>
-<td>コメント(<%= experience.comments.count %>)</td>
-<td><%= link_to '＋' ,edit_experience_path(experience.id) %></td>
-<td><%= link_to '×', experience_path(experience.id), method: :delete, "date-confirm" => "本当に削除しますか？" %></td>
+<td><%= link_to '＋' ,edit_experience_path(experience.id) %>　　　　　　<%= link_to '×', experience_path(experience.id), method: :delete, "date-confirm" => "本当に削除しますか？" %></td>
 </tr>
 <% end %>
 </tbody>
 </table>
-
-<table border = "1", width = "600">
-<tbody>
+<h3 class = "user-show">お気に入り</h3>
+<table class = "list-table">
+<thead>
 <tr>
 <th>
-お気に入り
+タイトル
+</th>
+<th>
+ユーザー名
 </th>
 </tr>
-
+</head>
+<tbody>
 <% @favorites.each do |favorite|%>
 <tr>
 <th>
 <%= link_to experience_path(favorite.experience) do %>
 <%= favorite.experience.title %>
-<% end %>
 </th>
+<% end %>
+<td>
+<%= link_to user_path(favorite.experience.user.id) do %>
+<%= favorite.experience.user.name %>
+<% end %>
+</td>
 </tr>
 <% end %>
 </tbody>
 </table>
 
+<%= link_to '投稿する', new_experience_path %>
 
 

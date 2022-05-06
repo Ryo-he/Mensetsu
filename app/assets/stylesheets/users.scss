@@ -31,3 +31,37 @@
   padding: 30px;
   text-align: center;
 }
+
+.user-table{
+  border: 1px solid;
+  margin :20px auto;
+}
+
+.user-table th{
+  border: 1px solid;
+  background-color: #CCCCCC;
+}
+
+.user-table tr{
+  border: 1px solid;
+}
+
+.list-table{
+  border: 1px solid;
+  margin :20px 335px;
+}
+
+
+.list-table thead{
+  background-color: #CCCCCC;
+}
+
+.list-table th,td{
+  padding: 10px;
+  border: 1px solid;
+}
+
+.user-show{
+   margin: 20px 310px;
+   padding: 20px;
+}

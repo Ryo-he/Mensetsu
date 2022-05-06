@@ -1,4 +1,6 @@
+<div class = "sort-box">
 <%= form_with url: search_path, method: :get, local: true do |f| %>
 <%= f.select :sort, [['投稿日が新しい順','new'],['投稿日が古い順','old'],['お気に入り登録が多い順','favorite']], include_blank: "並び替え" %>
 <%= f.submit '検索' %>
 <% end %>
+</div>

@@ -10,8 +10,16 @@
 <td>コメント(<%= experience.comments.count %>)</td>
 </tr>
 <tr>
-<td><%= experience.name %></td>
-<td><%= experience.genre.name %></td>
+<td>
+ユーザー名：
+<%= link_to user_path(experience.user.id) do %>
+<%= experience.user.name %>
+<% end %>
+</td>
+</tr>
+<tr>
+<td>企業名：<%= experience.name %></td>
+<td>業種：<%= experience.genre.name %></td>
 </tr>
 <tr>
 <% if user_signed_in? %>

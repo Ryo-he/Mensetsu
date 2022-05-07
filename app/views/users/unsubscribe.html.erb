@@ -7,7 +7,7 @@
 自身での投稿はできなくなります。</br>
 退会する場合は、「退会する」をクリックしてください。</p>
 
-<div class = "unsubscribe-botton">
+<div class = "unsubscribe-button">
 <%= link_to user_path(current_user.id), method: :delete, "data-confirm"=>"本当に退会しますか？" do%>
 <button type="button" class="btn btn-danger" style="width:350px">退会する</button>
 <% end %>

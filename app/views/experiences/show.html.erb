@@ -60,6 +60,11 @@
 <div class = "comment-box">
 <p>コメント<%= @experience.comments.count %>件</p>
 <% @experience.comments.each do |comment| %>
+<% if comment.user.image.attached? %>
+<%= image_tag comment.user.image, size: "50x50" %>
+<% else %>
+<%= image_tag 'no_image.jpg', size: "50x50" %>
+<% end %>
 <%= comment.user.name %>
 <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.experience_comment %>
 <% if user_signed_in? %>
@@ -75,7 +80,7 @@
 
 <%= form_with model: [@experience, @comment] do |f| %>
 <%= f.text_area :experience_comment, size: "50x3", placeholder: "コメントをここに" %></br>
-<div class = "post-botton">
+<div class = "post-button">
 <input class="btn btn-primary" type="submit" style="width:220px" value="コメントを送信する">
 </div>
 <% end %>

@@ -14,7 +14,7 @@
   text-align: center;
 }
 
-.unsubscribe-botton{
+.unsubscribe-button{
   padding: 20px;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .user-button{
-  padding: 30px;
+  padding: 20px;
   text-align: center;
 }
 
@@ -56,12 +56,17 @@
   background-color: #CCCCCC;
 }
 
-.list-table th,td{
+.user-show{
+   margin: 20px 310px;
+   padding: 20px;
+}
+
+.list-table tr{
   padding: 10px;
   border: 1px solid;
 }
 
-.user-show{
-   margin: 20px 310px;
-   padding: 20px;
+.list-table th{
+  padding: 10px;
+  border: 1px solid;
 }

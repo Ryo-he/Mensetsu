@@ -1,9 +1,9 @@
 <div class="container">
 <div class="row">
-<div class = "col-8">
-<h3 class = "show">投稿詳細</h3>
+<div class = "col-9">
+<h3 class = "show"><%= @experience.title %></br></h3>
 </div>
-<div class = "col-4">
+<div class = "col-3">
 <% if @experience.favorited_by?(current_user) %>
 <p>
 <%= link_to experience_favorites_path(@experience), method: :delete do %>
@@ -21,9 +21,6 @@
 </div>
 </div>
 <div class = "experience-box2">
-タイトル</br>
-<%= @experience.title %></br>
-</br>
 企業名</br>
 <%= @experience.name %></br>
 </br>

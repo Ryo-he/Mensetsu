@@ -6,7 +6,7 @@ class ExperiencesController < ApplicationController
 
   def index
     @experience = Experience.new
-    @experiences = Experience.all
+    @experiences = Experience.page(params[:page])
     @genres = Genre.all
   end
 

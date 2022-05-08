@@ -21,27 +21,34 @@
 <tr>
 <th>ユーザー設定</th>
 <td>
-<% if current_user.admin? %>
-<% current_user.admin == true %>
+<% if @user.admin? %>
+<% @user.admin == true %>
 管理者
 <% else %>
 一般ユーザー
 <% end %>
-　　<%= link_to '編集する', edit_user_path(@user.id) %>
+
+<% if @user == current_user %>
+<%= link_to '編集する', edit_user_path(@user.id) %>
+<% else %>
+<% end %>
 </td>
 </tr>
 </tbody>
 </table>
 
+<% if @user == current_user %>
 <div class = "user-button">
 <%= link_to users_unsubscribe_path do %>
 <button type="button" class="btn btn-danger" style="width:600px">退会する</button>
 <% end %>
 </div>
+<% else %>
+<% end %>
 
 <div class = "user-button">
-<% if current_user.admin? %>
-<% current_user.admin == true %>
+<% if @user.admin? %>
+<% @user.admin == true %>
 <%= link_to genres_path do %>
 <button type="button" class="btn btn-primary" style="width:600px">ジャンル追加・一覧</button>
 <% end %>
@@ -67,12 +74,12 @@
 <%= link_to experience_path(experience.id) do %>
 <%= experience.title %>
 <% end %></br>
-☆<%= experience.favorites.count %>　
+☆<%= experience.favorites.count %>
 　　　　コメント(<%= experience.comments.count %>)
 </th>
-<td>
-　　<%= link_to '＋' ,edit_experience_path(experience.id) %>
-　　　　　<%= link_to '×', experience_path(experience.id), method: :delete, "date-confirm" => "本当に削除しますか？" %>
+<td class = "user-td">
+<%= link_to '＋' ,edit_experience_path(experience.id) %>
+<%= link_to '×', experience_path(experience.id), method: :delete, "date-confirm" => "本当に削除しますか？" %>
 </td>
 </tr>
 <% end %>
@@ -107,12 +114,14 @@
 <% end %>
 </tbody>
 </table>
-
+<% if @user == current_user %>
 <div class = "user-button">
 <%= link_to new_experience_path do %>
 <button type="button" class="btn btn-primary" style="width:600px">投稿する</button>
 <% end %>
 </div>
+<% else %>
+<% end %>
 
 
 

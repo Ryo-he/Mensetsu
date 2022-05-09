@@ -14,12 +14,33 @@
  *= require_self
  */
 .footer-box {
- display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 footer {
-      margin-top: 80px;
+  margin-top: 80px;
+  width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
+.icon{
+  margin: 0 30px;
+  color: black;
+}
+
+.title-text{
+  font-family: cursive;
+}
+
+.text-list{
+  font-family: cursive;
+}
+
+.footer-text{
+  font-family: serif;
+}

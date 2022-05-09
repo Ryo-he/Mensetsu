@@ -18,7 +18,7 @@ class ExperiencesController < ApplicationController
    else
       @genres = Genre.all
       @experiences = Experience.all
-      render :new
+      render "new"
    end
   end
 
@@ -38,7 +38,7 @@ class ExperiencesController < ApplicationController
     redirect_to experience_path(@experience.id)
   else
     @genres = Genre.all
-    render :edit
+    render "edit"
   end
   end
 

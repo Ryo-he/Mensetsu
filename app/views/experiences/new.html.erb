@@ -1,3 +1,4 @@
+<div class ="error">
 <% if @experience.errors.any? %>
   <%= @experience.errors.count %>件のエラーが発生しました
   <ul>
@@ -6,6 +7,8 @@
     <% end %>
   </ul>
 <% end %>
+</div>
+
 <div class="container">
 <div class="row">
 <div class = "mx-auto"></div>
@@ -24,13 +27,13 @@
 <%= f.collection_select(:genre_id, @genres, :id ,:name, {prompt: "選択してください"}) %></br>
 </br>
 選考状況</br>
-<%= f.select :situation, [['一次','一次'],['二次','二次'],['三次','三次'],['三次以降','三次以降'],['最終','最終']], include_blank: "選択して下さい" %></br>
+<%= f.select :situation, [['一次','一次'],['二次','二次'],['三次','三次'],['三次以降','三次以降'],['最終','最終']], include_blank: "選択してください" %></br>
 </br>
 時間</br>
-<%= f.select :time, [['30分未満','30分未満'],['約30分','約30分'],['約45分','約45分'],['約1時間','約1時間'],['1時間以上','1時間以上']], include_blank: "選択して下さい" %></br>
+<%= f.select :time, [['30分未満','30分未満'],['約30分','約30分'],['約45分','約45分'],['約1時間','約1時間'],['1時間以上','1時間以上']], include_blank: "選択してください" %></br>
 </br>
 形式</br>
-<%= f.select :format, [['個人面接(1：1)','個人面接(1：1)'],['個人面接(1：多)','個人面接(1：多)'],['集団面接','集団面接'],['リモート面接','リモート面接']], include_blank: "選択して下さい" %></br>
+<%= f.select :format, [['個人面接(1：1)','個人面接(1：1)'],['個人面接(1：多)','個人面接(1：多)'],['集団面接','集団面接'],['リモート面接','リモート面接']], include_blank: "選択してください" %></br>
 </br>
 <p>雰囲気</p>
 <%= f.text_area :atomosphere, size: "60x5" %>

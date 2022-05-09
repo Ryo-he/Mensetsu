@@ -12,7 +12,7 @@ class GenresController < ApplicationController
       redirect_to request.referer
    else
       @genres = Genre.all
-      render :index
+      render "index"
    end
   end
   def edit
@@ -24,7 +24,7 @@ class GenresController < ApplicationController
    if @genre.update(genre_params)
      redirect_to genres_path
    else
-     render :edit
+     render "edit"
    end
   end
 

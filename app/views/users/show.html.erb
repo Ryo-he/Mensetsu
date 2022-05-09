@@ -47,11 +47,16 @@
 <% end %>
 
 <div class = "user-button">
+<% if @user == current_user %>
+
 <% if @user.admin? %>
 <% @user.admin == true %>
 <%= link_to genres_path do %>
 <button type="button" class="btn btn-primary" style="width:600px">ジャンル追加・一覧</button>
 <% end %>
+<% else %>
+<% end %>
+
 <% else %>
 <% end %>
 </div>
@@ -61,7 +66,7 @@
 <thead>
 <tr>
 <th>タイトル</th>
-<th>投稿設定</th>
+<th>作成日時</th>
 </tr>
 </thead>
 
@@ -73,13 +78,23 @@
 <th>
 <%= link_to experience_path(experience.id) do %>
 <%= experience.title %>
-<% end %></br>
-☆<%= experience.favorites.count %>
-　　　　コメント(<%= experience.comments.count %>)
+<% end %>
+
+<% if @user == current_user %>
+<%= link_to edit_experience_path(experience.id) do %>
+　　　<i class="fa-solid fa-gear"></i>
+<% end %>
+<%= link_to experience_path(experience.id), method: :delete do %>
+　　　<i class="fa-solid fa-trash-can"></i>
+<% end %>
+<% else %>
+<% end %>
+</br>
+　　<i class="fa-regular fa-star"></i><%= experience.favorites.count %>
+　　<i class="fa-solid fa-message"></i>(<%= experience.comments.count %>)
 </th>
-<td class = "user-td">
-<%= link_to '＋' ,edit_experience_path(experience.id) %>
-<%= link_to '×', experience_path(experience.id), method: :delete, "date-confirm" => "本当に削除しますか？" %>
+<td>
+<%= experience.created_at.strftime('%Y/%m/%d') %>
 </td>
 </tr>
 <% end %>

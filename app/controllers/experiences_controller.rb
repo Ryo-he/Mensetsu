@@ -6,7 +6,7 @@ class ExperiencesController < ApplicationController
 
   def index
     @experience = Experience.new
-    @experiences = Experience.page(params[:page])
+    @experiences = Experience.page(params[:page]).order(created_at: :DESC)
     @genres = Genre.all
   end
 
@@ -50,25 +50,27 @@ class ExperiencesController < ApplicationController
 
   def search
     if params[:sort] == 'new'
-      @experiences = Experience.all.order(created_at: :DESC)
+      @experiences = Experience.page(params[:page]).order(created_at: :DESC)
     elsif params[:sort] == 'old'
-      @experiences = Experience.all.order(created_at: :ASC)
+      @experiences = Experience.page(params[:page]).order(created_at: :ASC)
     elsif params[:sort] == 'favorite'
-      @experiences = Experience.includes(:favorites).sort {|a,b| b.favorites.size <=> a.favorites.size}
+      @experiences = Experience.sort_like.paginate(page: params[:page],per_page: (10))
+    elsif params[:sort] == ""
+      @experiences = Experience.page(params[:page]).order(created_at: :DESC)
     end
   end
 
   def company_search
-    @experiences = Experience.search(params[:keyword])
+    @experiences = Experience.search(params[:keyword]).page(params[:page]).order(created_at: :DESC)
     @keyword = params[:keyword]
     render "index"
   end
 
   def genre_search
     if params[:genres] == [""]
-       @experiences = Experience.all
+       @experiences = Experience.page(params[:page]).order(created_at: :DESC)
     else
-       @experiences = Experience.where(genre_id: params[:genres])
+       @experiences = Experience.where(genre_id: params[:genres]).page(params[:page]).order(created_at: :DESC)
     end
     render "index"
   end

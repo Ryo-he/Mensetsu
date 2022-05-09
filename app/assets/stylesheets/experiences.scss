@@ -27,6 +27,7 @@
   margin: 20px 70px;
   padding: 20px;
   border: 1px solid rgba(0,0,0,0.3);
+  font-family: sans-serif;
 }
 
 .show{
@@ -83,4 +84,14 @@
 .error{
   color: red;
   margin: 10px auto;
+}
+
+.check{
+  color: red;
+  margin-left : 450px;
+}
+
+.check-mark:after{
+  content: " *";
+  color : red;
 }

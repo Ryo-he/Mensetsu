@@ -17,30 +17,33 @@
 <%= form_with model: @experience, url: experiences_path, local: true do |f| %>
 <body id = "experience">
 <div class = "experience-box">
-タイトル</br>
+<p class = "check-mark">タイトル</p>
 <%= f.text_field :title %></br>
 </br>
 企業名</br>
+</br>
 <%= f.text_field :name %></br>
 </br>
-業種</br>
+<p class = "check-mark">業種</p>
 <%= f.collection_select(:genre_id, @genres, :id ,:name, {prompt: "選択してください"}) %></br>
 </br>
-選考状況</br>
-<%= f.select :situation, [['一次','一次'],['二次','二次'],['三次','三次'],['三次以降','三次以降'],['最終','最終']], include_blank: "選択してください" %></br>
+<p class = "check-mark">選考状況</p>
+<%= f.select :situation, [['非公開','非公開'],['一次','一次'],['二次','二次'],['三次','三次'],['三次以降','三次以降'],['最終','最終']], include_blank: "選択してください" %></br>
 </br>
-時間</br>
+<p class = "check-mark">時間</p>
 <%= f.select :time, [['30分未満','30分未満'],['約30分','約30分'],['約45分','約45分'],['約1時間','約1時間'],['1時間以上','1時間以上']], include_blank: "選択してください" %></br>
 </br>
-形式</br>
-<%= f.select :format, [['個人面接(1：1)','個人面接(1：1)'],['個人面接(1：多)','個人面接(1：多)'],['集団面接','集団面接'],['リモート面接','リモート面接']], include_blank: "選択してください" %></br>
+<p class = "check-mark">形式</p>
+<%= f.select :format, [['個人面接(1：1)','個人面接(1：1)'],['個人面接(1：多)','個人面接(1：多)'],['集団面接','集団面接'],['リモート面接','リモート面接'],['グループディスカッション','グループディスカッション']], include_blank: "選択してください" %></br>
 </br>
-<p>雰囲気</p>
+<p class = "check-mark">雰囲気</p>
 <%= f.text_area :atomosphere, size: "60x5" %>
-<p>質問</p>
+<p class = "check-mark">質問</p>
 <%= f.text_area :question, size: "60x10" %>
-<p>感想</p>
+<p class = "check-mark">感想</p>
 <%= f.text_area :impression, size: "60x10" %>
+</br>
+<div class = "check">*は必須項目です</div>
 </br>
 <div class = "post-button">
 <input class="btn btn-primary" type="submit" style="width:220px" value="投稿">

@@ -7,7 +7,8 @@
 就職活動は情報が命。当サイトで少しでも多くの情報を集めましょう！</br>
 よりよい未来のために！</p>
 </div>
-
+<% if user_signed_in? %> 
+<% else %>
 <div class ="botton-box">
 <%= link_to new_user_registration_path do %>
 <p class ="text-blue lead">今すぐ始める</p>
@@ -18,5 +19,6 @@
 <p class ="text-blue lead">こちら</p>
 <% end %>
 </div>
+<% end %>
 </div>
 </body>

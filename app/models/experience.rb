@@ -1,6 +1,5 @@
 class Experience < ApplicationRecord
   validates :title, presence: true
-  validates :name, presence: true
   validates :situation, presence: true
   validates :time, presence: true
   validates :format, presence: true
@@ -18,6 +17,10 @@ class Experience < ApplicationRecord
 
  def self.search(keyword)
   where(["name like?", "%#{keyword}%"])
+ end
+ 
+ def self.sort_like
+    Experience.all.sort{|a,b| b.favorites.size <=> a.favorites.size}
  end
 
 end

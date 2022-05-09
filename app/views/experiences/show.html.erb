@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row">
 <div class = "col-9">
-<h3 class = "show"><%= @experience.title %></br></h3>
+<h3 class = "show"><%= @experience.title %></h3>
 </div>
 <div class = "col-3">
 <% if @experience.favorited_by?(current_user) %>
@@ -54,29 +54,56 @@
   
 <div class = "comment-box">
 <p>コメント<%= @experience.comments.count %>件</p>
+<table>
+<tbody>
 <% @experience.comments.each do |comment| %>
+<tr>
+<td>
 <% if comment.user.image.attached? %>
 <%= image_tag comment.user.image, size: "50x50" %>
 <% else %>
 <%= image_tag 'no_image.jpg', size: "50x50" %>
 <% end %>
-<%= comment.user.name %>
-<%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.experience_comment %>
+<%= comment.user.name %></td>
+<td><%= comment.created_at.strftime('%Y/%m/%d') %></td>
+</tr>
+<tr>
+<td><%= comment.experience_comment %></td>
+</tr>
+<tr>
+<td>
 <% if user_signed_in? %>
 <% if comment.user == current_user %>
-<%= link_to "削除", experience_comment_path(comment.experience, comment), method: :delete %>
+<%= link_to "コメントを削除", experience_comment_path(comment.experience, comment), method: :delete %>
 <% end %>
 <% if current_user.admin? %>
-<%= link_to "削除", experience_comment_path(comment.experience, comment), method: :delete %>
+<%= link_to "管理者削除", experience_comment_path(comment.experience, comment), method: :delete %>
 <% end %>
 <% else %>
 <% end %>
+</td>
+</tr>
 <% end %>
-
+</tbody>
+</table>
+<% if user_signed_in? %>
 <%= form_with model: [@experience, @comment] do |f| %>
 <%= f.text_area :experience_comment, size: "50x3", placeholder: "コメントをここに" %></br>
 <div class = "post-button">
 <input class="btn btn-primary" type="submit" style="width:220px" value="コメントを送信する">
 </div>
+<% end %>
+
+<% else %>
+
+<h5>ログインしてコメントを投稿しましょう！</h5>
+<%= link_to new_user_registration_path do %>
+<p>今すぐ始める</p>
+<% end %>
+
+<p>既にご登録済みの方は</p>
+<%= link_to new_user_session_path do %>
+<p>こちら</p>
+<% end %>
 <% end %>
 </div>

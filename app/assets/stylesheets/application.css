@@ -16,7 +16,7 @@
 .footer-box {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 footer {
@@ -44,3 +44,11 @@ a {
 .footer-text{
   font-family: serif;
 }
+
+.pagination{
+ margin: 20px 250px;
+ border-radius: 15px;
+}
+
+
+

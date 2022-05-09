@@ -19,7 +19,7 @@
 <td><%= @user.introduction %></td>
 </tr>
 <tr>
-<th>ユーザー設定</th>
+<th>ユーザー情報</th>
 <td>
 <% if @user.admin? %>
 <% @user.admin == true %>
@@ -27,7 +27,11 @@
 <% else %>
 一般ユーザー
 <% end %>
-
+</td>
+</tr>
+<tr>
+<th>ユーザー設定</th>
+<td>
 <% if @user == current_user %>
 <%= link_to '編集する', edit_user_path(@user.id) %>
 <% else %>
@@ -66,7 +70,7 @@
 <thead>
 <tr>
 <th>タイトル</th>
-<th>作成日時</th>
+<th>投稿日時</th>
 </tr>
 </thead>
 

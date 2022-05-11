@@ -6,8 +6,24 @@ class ExperiencesController < ApplicationController
 
   def index
     @experience = Experience.new
-    @experiences = Experience.page(params[:page]).order(created_at: :DESC)
+    @experiences = Experience.page(params[:page])
     @genres = Genre.all
+    if params[:sort] == 'new'
+      @experiences = Experience.page(params[:page]).order(created_at: :DESC)
+    elsif params[:sort] == 'old'
+      @experiences = Experience.page(params[:page]).order(created_at: :ASC)
+    elsif params[:sort] == 'favorite'
+      @experiences = Experience.sort_like.paginate(page: params[:page],per_page: (2))
+    elsif params[:sort] == ""
+      @experiences = Experience.page(params[:page]).order(created_at: :DESC)
+    elsif params[:genres] == [""]
+      @experiences = Experience.page(params[:page]).order(created_at: :DESC)
+    elsif
+      @experiences = Experience.where(genre_id: params[:genres]).paginate(page: params[:page],per_page: (2)).order(created_at: :DESC)
+    elsif
+      @experiences = Experience.search(params[:keyword]).order(created_at: :DESC).page(params[:page])
+      @keyword = params[:keyword]
+    end
   end
 
   def create
@@ -46,33 +62,6 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:id])
     @experience.destroy
     redirect_to request.referer
-  end
-
-  def search
-    if params[:sort] == 'new'
-      @experiences = Experience.page(params[:page]).order(created_at: :DESC)
-    elsif params[:sort] == 'old'
-      @experiences = Experience.page(params[:page]).order(created_at: :ASC)
-    elsif params[:sort] == 'favorite'
-      @experiences = Experience.sort_like.paginate(page: params[:page],per_page: (10))
-    elsif params[:sort] == ""
-      @experiences = Experience.page(params[:page]).order(created_at: :DESC)
-    end
-  end
-
-  def company_search
-    @experiences = Experience.search(params[:keyword]).page(params[:page]).order(created_at: :DESC)
-    @keyword = params[:keyword]
-    render "index"
-  end
-
-  def genre_search
-    if params[:genres] == [""]
-       @experiences = Experience.page(params[:page]).order(created_at: :DESC)
-    else
-       @experiences = Experience.where(genre_id: params[:genres]).page(params[:page]).order(created_at: :DESC)
-    end
-    render "index"
   end
 
 private

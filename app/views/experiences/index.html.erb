@@ -12,17 +12,27 @@
 <div class = "company-search">
 <p>企業名検索</p>
 </div>
-<%= form_with url: company_search_path, method: :get, local: true do |f| %>
+<div class = "search-form">
+<%= form_with url: experiences_path, method: :get, local: true do |f| %>
 <%= f.text_field :keyword, value: @keyword %>
 <%= f.submit "検索" %>
 <% end %>
+</div>
 </br>
 <div class = "company-search">
 <p>業種検索</p>
 </div>
-<%= form_with url: genre_search_path , method: :get, local: true do |f| %>
+
+<%= form_with url: experiences_path , method: :get, local: true do |f| %>
 <div class = "genre-search">
-<%= f.collection_check_boxes :genres, Genre.all, :id, :name %>
+<ul>
+<%= f.collection_check_boxes :genres, Genre.all, :id, :name do |b| %>
+<li>
+<%= b.check_box %>
+<%= b.label %>
+</li>
+<% end %>
+</ul>
 <%= f.submit '検索' %>
 </div>
 <% end %>

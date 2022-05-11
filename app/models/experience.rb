@@ -18,7 +18,7 @@ class Experience < ApplicationRecord
  def self.search(keyword)
   where(["name like?", "%#{keyword}%"])
  end
- 
+
  def self.sort_like
     Experience.all.sort{|a,b| b.favorites.size <=> a.favorites.size}
  end

@@ -19,7 +19,7 @@
 }
 
 .experience-box2{
-  margin: 0 400px;
+  margin: 0 300px;
   padding: 50px;
 }
 
@@ -76,11 +76,6 @@
   background-color: #CCCCCC;
 }
 
-.genre-edit-box{
-  width: 100%;
-  height: 500px;
-}
-
 .error{
   color: red;
   margin: 10px auto;
@@ -102,4 +97,94 @@ ul{
 
 .search-form{
   margin-left: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  #experience{
+    width: 105%;
+  }
+  .experience-box{
+    margin: 10px 100px;
+  }
+  .comment-box{
+    margin: 0 250px;
+    padding: 50px;
+  }
+  .experience-box2{
+    margin: 0 100px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .show{
+    margin: 20px;
+  }
+  .experience-box{
+    margin: 0px 10px;
+  }
+  .experience-box2{
+    margin: 0 80px;
+    padding: 50px;
+  }
+  .comment-box{
+  margin: 0 100px;
+  padding: 50px;
+  }
+
+}
+ @media screen and (max-width: 425px) {
+   #experience{
+    width: 100%;
+  }
+  .experience-box{
+    margin: 0px;
+    margin-left: 0px;
+    padding: 0px;
+  }
+  .mx-auto{
+    margin: 0px;
+  }
+  .check{
+    margin-left: 370px;
+  }
+  .post-button{
+    padding: 30px;
+    margin-left: 60px;
+  }
+  .experience-box2{
+    margin: 0 50px;
+    padding: 50px;
+    width: 100%;
+  }
+  .comment-box{
+    margin: 0 80px;
+    padding: 40px;
+    width: 90%;
+  }
+}
+ @media screen and (max-width: 375px) {
+  #experience{
+    width: 110%;
+  }
+  .check{
+    margin-left: 350px;
+  }
+  .comment-box{
+    margin: 0 50px;
+    padding: 40px;
+    width: 90%;
+  }
+}
+@media screen and (max-width: 375px) {
+  #experience{
+    width: 115%;
+  }
+  .check{
+    margin-left: 310px;
+  }
+  .post-button{
+   padding: 30px;
+   margin-left: 100px;
+  }
 }

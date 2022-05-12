@@ -13,3 +13,46 @@ table td {
   margin: 20px auto 10px;
 }
 
+.genre-table{
+  margin: 20px auto 10px;
+}
+
+.genre-edit-box{
+  width: 100%;
+  height: 500px;
+}
+@media screen and (max-width: 425px) {
+  .genre-box{
+    margin-left: 150px;
+  }
+  
+  .genre-table{
+    margin-left: 60px;
+  }
+  .genre-edit-box{
+    width: 120%;
+    margin-right: 30px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .genre-box{
+    margin-left: 110px;
+  }
+  
+  .genre-edit-box{
+    width: 115%;
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .genre-box{
+    margin-left: 100px;
+    width: 90%;
+  }
+  
+  .genre-edit-box{
+    width: 125%;
+    margin-right: 30px;
+  }
+}

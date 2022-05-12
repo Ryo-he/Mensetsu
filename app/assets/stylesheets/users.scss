@@ -72,3 +72,62 @@
   padding: 10px;
   border: 1px solid;
 }
+
+ @media screen and (max-width: 768px) {
+   .list-table{
+     margin: 0px auto;
+     width: 680px;
+   }
+   .user-show{
+     text-align: center;
+     margin: 0 80px;
+   }
+}
+ @media screen and (max-width: 425px) {
+  .user-table{
+     width: 120%;
+     margin: 0 auto;
+   }
+   .list-table{
+     width: 120%;
+    margin: 0 auto;
+   }
+   .user-button{
+     width: 120%;
+     margin: 0 auto;
+   }
+   .user-show{
+     text-align: center;
+     width: 120%;
+     margin: 0 auto;
+   }
+   .unsubscribe-box{
+     margin-left: 30px;
+   }
+   .edit-user{
+     margin: 10px 120px;
+   }
+}
+ @media screen and (max-width: 375px) {
+   .edit-user{
+     margin: 10px 100px;
+   }
+}
+ @media screen and (max-width: 320px) {
+  .user-table{
+     margin-left: 20px;
+   }
+   .list-table{
+     margin-left: 20px;
+   }
+   .user-button{
+     margin: 0px auto;
+   }
+   .user-show{
+     text-align: center;
+     margin: 0px;
+   }
+   .edit-user{
+     margin: 10px 80px;
+   }
+}

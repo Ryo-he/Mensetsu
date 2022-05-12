@@ -50,5 +50,52 @@ a {
  border-radius: 15px;
 }
 
+ @media screen and (max-width: 1024px) {
+  header {
+    width: 100%;
+  }
+  
+  footer{
+    width: 100%;
+  }
+  
+  body{
+    width: 100%;
+  }
+  
+  .footer-box{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 425px) {
+  header {
+    width: 120%;
+  }
+  
+  footer{
+    width: 120%;
+  }
+  
+  body{
+    width: 120%;
+  }
+  
+  .footer-box{
+    width: 120%;
+  }
+}
+@media screen and (max-width: 320px) {
+  header {
+    width: 130%;
+  }
+  footer{
+    width: 130%;
+  }
+  .footer-box{
+    width: 130%;
+  }
+}
+
+
 
 

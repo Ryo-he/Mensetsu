@@ -7,7 +7,7 @@
 <% if @experience.favorited_by?(current_user) %>
 <p>
 <%= link_to experience_favorites_path(@experience), method: :delete do %>
-★ お気に入りを解除
+★ お気に入り解除
 <% end %>
 </p>
 <% else %>

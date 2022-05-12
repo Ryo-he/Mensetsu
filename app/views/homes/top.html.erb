@@ -1,7 +1,7 @@
 <body id = "top">
-<div class ="top-box">
-<div class ="text-box">
-<p class ="text-white lead">ようこそ！就職活動中の皆さん!</br>
+<div class = "top-box">
+<div class = "text-box">
+<p class = "text-white lead">ようこそ！就職活動中の皆さん!</br>
 当サイトは今まであなたがしてきた面接の体験を自由に投稿したり、</br>
 または、他のユーザーの体験を閲覧することができます！</br>
 就職活動は情報が命。当サイトで少しでも多くの情報を集めましょう！</br>
@@ -9,14 +9,14 @@
 </div>
 <% if user_signed_in? %> 
 <% else %>
-<div class ="botton-box">
+<div class = "botton-box">
 <%= link_to new_user_registration_path do %>
-<p class ="text-blue lead">今すぐ始める</p>
+<p class = "text-blue lead">今すぐ始める</p>
 <% end %>
 
-<p class ="text-white lead">既にご登録済みの方は</p>
+<p class = "text-white lead">既にご登録済みの方は</p>
 <%= link_to new_user_session_path do %>
-<p class ="text-blue lead">こちら</p>
+<p class = "text-blue lead">こちら</p>
 <% end %>
 </div>
 <% end %>

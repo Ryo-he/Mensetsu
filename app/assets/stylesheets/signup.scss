@@ -49,3 +49,24 @@
   padding: 30px;
   text-align: center;
 }
+
+ @media screen and (max-width: 425px) {
+  #signup{
+   width: 120%;
+  }
+  .signup-box{
+   width: 120%;
+   height: 80%;
+  }
+  .login-box{
+   margin-left: 140px;
+}
+}
+ @media screen and (max-width: 320px) {
+  .signup-box{
+   width: 130%;
+   height: 80%;
+   margin-left: 10px;
+  }
+}
+

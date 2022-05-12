@@ -6,24 +6,63 @@ class ExperiencesController < ApplicationController
 
   def index
     @experience = Experience.new
-    @experiences = Experience.page(params[:page])
-    @genres = Genre.all
-    if params[:sort] == 'new'
-      @experiences = Experience.page(params[:page]).order(created_at: :DESC)
-    elsif params[:sort] == 'old'
-      @experiences = Experience.page(params[:page]).order(created_at: :ASC)
-    elsif params[:sort] == 'favorite'
-      @experiences = Experience.sort_like.paginate(page: params[:page],per_page: (2))
-    elsif params[:sort] == ""
-      @experiences = Experience.page(params[:page]).order(created_at: :DESC)
-    elsif params[:genres] == [""]
-      @experiences = Experience.page(params[:page]).order(created_at: :DESC)
-    elsif
-      @experiences = Experience.where(genre_id: params[:genres]).paginate(page: params[:page],per_page: (2)).order(created_at: :DESC)
-    elsif
-      @experiences = Experience.search(params[:keyword]).order(created_at: :DESC).page(params[:page])
-      @keyword = params[:keyword]
+    @keyword = params[:keyword]
+   if params[:genres]
+    if params[:genres].class == Array
+      @genres = params[:genres].join(",")
+    else
+      @genres = params[:genres]
     end
+   end
+   if params[:sort].nil? && params[:genres].nil? && params[:keyword].nil?
+      @experiences = Experience.paginate(page: params[:page],per_page: (10)).order(created_at: :DESC)
+   elsif params[:sort] == 'new'
+    if params[:genres] && params[:genres] != ""
+      if params[:genres].class == Array
+        @experiences = Experience.where(genre_id: params[:genres]).paginate(page: params[:page],per_page: (10)).order(created_at: :DESC)
+      else
+        @experiences = Experience.where(genre_id: params[:genres].split(",")).paginate(page: params[:page],per_page: (10)).order(created_at: :DESC)
+      end
+    elsif params[:keyword]
+      @experiences = Experience.search(params[:keyword]).paginate(page: params[:page],per_page: (10)).order(created_at: :DESC)
+    else
+      @experiences = Experience.paginate(page: params[:page],per_page: (10)).order(created_at: :DESC)
+    end
+   elsif params[:sort] == 'old'
+     if params[:genres] && params[:genres] != ""
+      if params[:genres].class == Array
+        @experiences = Experience.where(genre_id: params[:genres]).paginate(page: params[:page],per_page: (10)).order(created_at: :ASC)
+      else
+        @experiences = Experience.where(genre_id: params[:genres].split(",")).paginate(page: params[:page],per_page: (10)).order(created_at: :ASC)
+      end
+     elsif params[:keyword]
+      @experiences = Experience.search(params[:keyword]).paginate(page: params[:page],per_page: (10)).order(created_at: :ASC)
+     else
+      @experiences = Experience.paginate(page: params[:page],per_page: (10)).order(created_at: :ASC)
+     end
+   elsif params[:sort] == 'favorite'
+     if params[:genres] && params[:genres] != ""
+      if params[:genres].class == Array
+        @experiences = Experience.where(genre_id: params[:genres]).sort_like.paginate(page: params[:page],per_page: (10))
+      else
+        @experiences = Experience.where(genre_id: params[:genres].split(",")).sort_like.paginate(page: params[:page],per_page: (10))
+      end
+     elsif params[:keyword]
+       @experiences = Experience.search(params[:keyword]).sort_like.paginate(page: params[:page],per_page: (10))
+     else
+      @experiences = Experience.sort_like.paginate(page: params[:page],per_page: (10))
+     end
+   elsif params[:sort] == "" && params[:genres] == ""
+      @experiences = Experience.paginate(page: params[:page],per_page: (10)).order(created_at: :DESC)
+   elsif params[:genres]
+      if params[:genres] == [""]
+       @experiences = Experience.paginate(page: params[:page],per_page: (10)).order(created_at: :DESC)
+      else
+         @experiences = Experience.where(genre_id: params[:genres]).paginate(page: params[:page],per_page: (10)).order(created_at: :DESC)
+      end
+   elsif params[:keyword]
+      @experiences = Experience.search(params[:keyword]).paginate(page: params[:page],per_page: (10)).order(created_at: :DESC)
+   end
   end
 
   def create

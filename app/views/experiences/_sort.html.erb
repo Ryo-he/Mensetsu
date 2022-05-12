@@ -1,8 +1,8 @@
 <div class = "sort-box">
 <%= form_with url: experiences_path, method: :get, local: true do |f| %>
 <%= f.select :sort, [['投稿日が新しい順','new'],['投稿日が古い順','old'],['お気に入り登録が多い順','favorite']], include_blank: "並び替え" %>
-<%= f.hidden_field :genres, :value => @experience.genre_id %>
-<%= f.hidden_field :keyword, :value => @key %>
+<%= f.hidden_field :genres, :value => @genres %>
+<%= f.hidden_field :keyword, :value => @keyword %>
 <%= f.submit '検索' %>
 <% end %>
 </div>

@@ -21,6 +21,7 @@
   padding: 0 50px;
   text-shadow:1px 1px 3px #000000;
   background-color: rgba(46, 46, 46, 0.5);
+
 }
 
 .botton-box{
@@ -29,4 +30,33 @@
   text-shadow:1px 1px 3px #000000;
   background-color: rgba(46, 46, 46, 0.5);
 }
+
+  @media screen and (max-width: 1024px) {
+    #top {
+     width: 100%;
+    }
+}
+  @media screen and (max-width: 768px) {
+    #top {
+     background-color: #CCCCCC;
+     background-image: none;
+    }
+}
+  @media screen and (max-width: 425px) {
+    .text-box {
+     width: 100%;
+     margin-left: 5px;
+    }
+    .botton-box {
+     width: 100%;
+     margin-left: 5px;
+    }
+}
+
+  @media screen and (max-width: 375px) {
+    #top {
+     width: 115%;
+    }
+}
+
 

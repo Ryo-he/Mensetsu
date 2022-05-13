@@ -16,11 +16,11 @@
 .footer-box {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
+  min-width: 580px;
 }
 
 footer {
-  margin-top: 80px;
+  margin-top: 110px;
   width: 100%;
 }
 
@@ -41,13 +41,12 @@ a {
   font-family: cursive;
 }
 
-.footer-text{
-  font-family: serif;
-}
-
 .pagination{
  margin: 20px 250px;
  border-radius: 15px;
+}
+.col-md-7{
+  margin: 0 auto;
 }
 
  @media screen and (max-width: 1024px) {
@@ -84,6 +83,7 @@ a {
     width: 120%;
   }
 }
+
 @media screen and (max-width: 320px) {
   header {
     width: 130%;

@@ -45,9 +45,10 @@
   flex-flow: column;
 }
 
-.col-4{
+.col-lg-4{
   margin: 20px 0;
   border: 1px solid rgba(0,0,0,0.3);
+  padding: 10px;
 }
 
 .col-3{
@@ -128,10 +129,18 @@ ul{
     padding: 50px;
   }
   .comment-box{
-  margin: 0 100px;
-  padding: 50px;
+    margin: 0 100px;
+    padding: 50px;
   }
-
+  .experience-table{
+    margin-left: 70px;
+    width: 700px;
+    margin-left: 0px;
+  }
+  .experience-list{
+    margin: 0px;
+    width: 700px;
+}
 }
  @media screen and (max-width: 425px) {
    #experience{
@@ -139,18 +148,18 @@ ul{
   }
   .experience-box{
     margin: 0px;
-    margin-left: 0px;
+    margin-left: 30px;
     padding: 0px;
   }
   .mx-auto{
     margin: 0px;
   }
   .check{
-    margin-left: 370px;
+    margin-left: 390px;
   }
   .post-button{
     padding: 30px;
-    margin-left: 60px;
+    margin-left: 40px;
   }
   .experience-box2{
     margin: 0 50px;
@@ -162,29 +171,36 @@ ul{
     padding: 40px;
     width: 90%;
   }
+  .col-lg-4{
+    border: none;
+    margin-left: 80px;
+  }
 }
  @media screen and (max-width: 375px) {
   #experience{
     width: 110%;
   }
   .check{
-    margin-left: 350px;
+    margin-left: 370px;
   }
   .comment-box{
-    margin: 0 50px;
+    margin: 0px;
+    margin-left: 100px;
     padding: 40px;
     width: 90%;
   }
+  .post-button{
+    margin-left: 20px;
+  }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 320px) {
   #experience{
     width: 115%;
   }
   .check{
-    margin-left: 310px;
+    margin-left: 330px;
   }
   .post-button{
-   padding: 30px;
-   margin-left: 100px;
+    margin-left: 30px;
   }
 }

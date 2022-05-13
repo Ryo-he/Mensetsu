@@ -9,7 +9,7 @@
 
 .unsubscribe-box{
   width: 100%;
-  height: 430px;
+  height: 280px;
   margin: 70px auto;
   text-align: center;
 }
@@ -101,12 +101,13 @@
      width: 120%;
      margin: 0 auto;
    }
-   .unsubscribe-box{
-     margin-left: 30px;
-   }
    .edit-user{
      margin: 10px 120px;
    }
+   .unsubscribe-box{
+    margin: 70px;
+    text-align: none;
+}
 }
  @media screen and (max-width: 375px) {
    .edit-user{

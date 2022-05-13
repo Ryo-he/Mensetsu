@@ -16,11 +16,19 @@ class Experience < ApplicationRecord
  end
 
  def self.search(keyword)
-  where(["name like?", "%#{keyword}%"])
+    where(["name like?", "%#{keyword}%"])
  end
 
- def self.sort_like
-    Experience.all.sort{|a,b| b.favorites.size <=> a.favorites.size}
+ def self.sort_like(page)
+    Experience.all.sort{|a,b| b.favorites.size <=> a.favorites.size}.paginate(page: page, per_page: (10))
  end
 
+ def self.page_new(page)
+    paginate(page: page, per_page: (10)).order(created_at: :DESC)
+ end
+ 
+ def self.page_old(page)
+    paginate(page: page, per_page: (10)).order(created_at: :ASC)
+ end
+ 
 end

@@ -7,6 +7,8 @@ class ExperiencesController < ApplicationController
   def index
     @experience = Experience.new
     @keyword = params[:keyword]
+  
+    Experience.where(search_hash)
    if params[:genres]
     if params[:genres].class == Array
       @genres = params[:genres].join(",")

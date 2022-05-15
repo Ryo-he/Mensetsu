@@ -8,7 +8,7 @@
 }
 
 #top{
-  background-image: image-url(fujiko0822.jpg.webp);
+  background-image: url(fujiko0822.jpg.webp);
 }
 
 .top-box{
@@ -57,7 +57,7 @@
     #top {
      width: 115%;
     }
-} 
+}
   @media screen and (max-width: 320px){
     .text-box {
      margin-left: 80px;

@@ -53,6 +53,5 @@ if Rails.env.production?
     File.join(rails_root, 'log', 'puma-error.log'),
     true
   )
-  
   daemonize
 end

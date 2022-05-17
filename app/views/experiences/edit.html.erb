@@ -1,8 +1,5 @@
-<div class="container">
-<div class="row">
-<div class = "mx-auto"></div>
 
-<h3>投稿内容編集</h3>
+<h3 class = "show">投稿内容編集</h3>
 <%= form_with model: @experience, url: experience_path(@experience.id), local: true do |f| %>
 <body id = "experience">
 <div class = "experience-box">
@@ -31,11 +28,10 @@
 <p>感想</p>
 <%= f.text_area :impression, size: "60x10" %>
 </br>
+</div>
 <div class = "post-button">
 <input class="btn btn-success" type="submit" style="width:220px" value="変更を保存">
 </div>
 <% end %>
-</div>
-</div>
-</div>
+
 </body>

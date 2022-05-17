@@ -9,10 +9,6 @@
 <% end %>
 </div>
 
-<div class="container">
-<div class="row">
-<div class = "mx-auto"></div>
-
 <h3 class = "show">あなたの体験記</h3>
 <%= form_with model: @experience, url: experiences_path, local: true do |f| %>
 <body id = "experience">
@@ -49,7 +45,5 @@
 <input class="btn btn-primary" type="submit" style="width:220px" value="投稿">
 </div>
 <% end %>
-</div>
-</div>
-</div>
+
 </body>

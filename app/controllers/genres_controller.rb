@@ -1,5 +1,4 @@
 class GenresController < ApplicationController
-  before_action :user_admin, only: [:index,:create]
 
   def index
     @genre = Genre.new
@@ -41,10 +40,5 @@ class GenresController < ApplicationController
     params.require(:genre).permit(:name)
   end
   
-  def user_admin
-   unless current_user.admin?
-     redirect_to root_path 
-   end
-  end
 
 end

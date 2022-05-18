@@ -21,6 +21,7 @@
 
 footer {
   margin-top: 110px;
+  padding-top: 50px;
   width: 100%;
 }
 
@@ -100,7 +101,7 @@ a {
   }
   
   footer{
-    margin-top: 1000px;
+    margin-top: 800px;
   }
 }
 

@@ -150,7 +150,7 @@ ul{
   }
   .experience-box{
     margin: 0px;
-    margin-left: 30px;
+    margin-left: 60px;
     padding: 0px;
   }
   .mx-auto{
@@ -161,7 +161,7 @@ ul{
   }
   .post-button{
     padding: 30px;
-    margin-left: 40px;
+    margin-left: 150px;
   }
   .experience-box2{
     margin: 0 50px;
@@ -191,9 +191,6 @@ ul{
     padding: 40px;
     width: 90%;
   }
-  .post-button{
-    margin-left: 20px;
-  }
 }
 @media screen and (max-width: 320px) {
   #experience{
@@ -201,8 +198,5 @@ ul{
   }
   .check{
     margin-left: 330px;
-  }
-  .post-button{
-    margin-left: 30px;
   }
 }

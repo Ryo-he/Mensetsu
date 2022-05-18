@@ -25,13 +25,15 @@ footer {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
+
 
 .icon{
   margin: 0 30px;
   color: black;
   font-family: "Font Awesome 5 Free";
+  text-decoration:none; 
 }
 
 .title-text{
@@ -95,6 +97,10 @@ a {
   }
   .footer-box{
     width: 130%;
+  }
+  
+  footer{
+    margin-top: 600px;
   }
 }
 

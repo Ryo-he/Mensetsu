@@ -37,13 +37,15 @@
 <%= @experience.format %></br>
 </br>
 雰囲気</br>
-<%= @experience.atomosphere %>
+<%=safe_join(@experience.atomosphere.split("\n"),tag(:br))%>
+</br>
 </br>
 質問</br>
-<%= @experience.question %>
+<%=safe_join(@experience.question.split("\n"),tag(:br))%>
+</br>
 </br>
 感想</br>
-<%= @experience.impression %>
+<%=safe_join(@experience.impression.split("\n"),tag(:br))%>
 </div>
 
   <ul>
@@ -68,7 +70,7 @@
 <td><%= comment.created_at.strftime('%Y/%m/%d') %></td>
 </tr>
 <tr>
-<td><%= comment.experience_comment %></td>
+<td><%=safe_join(comment.experience_comment.split("\n"),tag(:br))%></td>
 </tr>
 <tr>
 <td>

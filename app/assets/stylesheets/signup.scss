@@ -62,11 +62,19 @@
    margin-left: 140px;
 }
 }
+@media screen and (max-width: 375px) {
+  .login-box{
+   height: 200px;
+}
+}
  @media screen and (max-width: 320px) {
   .signup-box{
    width: 130%;
    height: 80%;
    margin-left: 10px;
   }
+  .login-box{
+   height: 200px;
+}
 }
 

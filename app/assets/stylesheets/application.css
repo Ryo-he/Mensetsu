@@ -88,6 +88,12 @@ a {
   }
 }
 
+@media screen and (max-width: 375px){
+  footer{
+    margin-top: 600px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   header {
     width: 130%;

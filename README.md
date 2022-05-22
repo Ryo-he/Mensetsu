@@ -33,6 +33,8 @@ https://docs.google.com/spreadsheets/d/1TB0c_t4fU9dMu8fgbfl0hn2ozR65_7-Mmgs6-wtU
 https://docs.google.com/spreadsheets/d/1-j-hPg2eZ2E3Tr36tuUD0ym6vOk0VrfPeuyfWt4W-gs/edit?usp=sharing
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1nHpcA0jqDfYeFzz1rrI0pOtyx3h5HeGCGZlcz4l5tsU/edit?usp=sharing
+## テスト仕様書
+https://docs.google.com/spreadsheets/d/1Qp9896IJ-uU5DceatU07pZ3nDDzaO4-u/edit?usp=sharing&ouid=114566026376994873313&rtpof=true&sd=true
 
 ## 開発環境
 - OS：Linux(WindowsOS)

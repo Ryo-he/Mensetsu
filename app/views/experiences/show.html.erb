@@ -56,7 +56,7 @@
   
 <div class = "comment-box">
 <p>コメント<%= @experience.comments.count %>件</p>
-<table>
+<table class = "comment">
 <tbody>
 <% @experience.comments.each do |comment| %>
 <tr>
@@ -90,7 +90,7 @@
 </table>
 <% if user_signed_in? %>
 <%= form_with model: [@experience, @comment] do |f| %>
-<%= f.text_area :experience_comment, size: "50x3", placeholder: "コメントをここに" %></br>
+<%= f.text_area :experience_comment, size: "30x3", placeholder: "コメントをここに" %></br>
 <div class = "post-button">
 <input class="btn btn-primary" type="submit" style="width:220px" value="コメントを送信する">
 </div>

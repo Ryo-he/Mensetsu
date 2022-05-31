@@ -8,18 +8,19 @@
 }
 
 #experience{
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(192, 192, 192, 0.5);
   padding-bottom: 100px;
 }
 
 .experience-box{
-  margin: 0 350px;
+  margin: 0 auto;
+  width: 350px;
 }
 
 .experience-box2{
-  margin: 0 300px;
+  margin: 0 800px;
   padding: 50px;
 }
 
@@ -57,8 +58,12 @@
 
 .comment-box{
   border-top: 1px solid;
-  margin: 0 400px;
+  text-align: center;
   padding: 50px;
+}
+
+.comment{
+  margin: 0 auto;
 }
 
 .experience-table{
@@ -84,7 +89,7 @@
 
 .check{
   color: red;
-  margin-left : 450px;
+  text-align: right;
 }
 
 .check-mark:after{
@@ -99,16 +104,24 @@ ul{
 .search-form{
   margin-left: 30px;
 }
-
-@media screen and (max-width: 1024px) {
-  #experience{
-    width: 105%;
+@media screen and (max-width: 2040px){
+  .experience-box2{
+   margin: 0 400px;
+   padding: 50px;
   }
+}
+@media screen and (max-width: 1440px){
+  .experience-box2{
+   margin: 0 300px;
+   padding: 50px;
+  }
+}
+@media screen and (max-width: 1024px) {
   .experience-box{
-    margin: 10px 100px;
+    width: 300px;
   }
   .comment-box{
-    margin: 0 250px;
+    margin: 0 auto;
     padding: 50px;
   }
   .experience-box2{
@@ -121,59 +134,59 @@ ul{
   .show{
     margin: 20px;
   }
-  .experience-box{
-    margin: 0px 10px;
-  }
   .experience-box2{
     margin: 0 80px;
     padding: 50px;
   }
   .comment-box{
-    margin: 0 100px;
+    margin: 0px;
     padding: 50px;
   }
   .experience-table{
-    margin-left: 70px;
     width: 700px;
     margin-left: 0px;
   }
   .experience-list{
     margin: 0px;
     width: 700px;
+  }
 }
-}
+ @media screen and (max-width: 767px){
+   .experience-list{
+    width: 100vw;
+  }
+   .experience-table{
+    width: 100vw;
+  }
+   
+ }
+ @media screen and (max-width: 630px){
+   .experience-box{
+    width: 290px;
+  }
+   
+ }
  @media screen and (max-width: 425px) {
-   #experience{
-    width: 100%;
-  }
-  .experience-box{
-    margin: 0px;
-    margin-left: 60px;
-    padding: 0px;
-  }
   .mx-auto{
     margin: 0px;
   }
   .check{
-    margin-left: 390px;
+    margin-left: 0px;
   }
   .post-button{
     padding: 30px;
     margin-left: 150px;
   }
   .experience-box2{
-    margin: 0 50px;
+    margin: 0px;
     padding: 50px;
-    width: 100%;
+    width: 100vw;
   }
   .comment-box{
-    margin: 0 80px;
     padding: 40px;
-    width: 90%;
   }
   .col-lg-4{
     border: none;
-    margin-left: 80px;
   }
   .post-button{
     margin: auto;
@@ -182,24 +195,16 @@ ul{
   }
 }
  @media screen and (max-width: 375px) {
-  #experience{
-    width: 110%;
-  }
   .check{
-    margin-left: 370px;
+    margin-left: 0px;
   }
   .comment-box{
     margin: 0px;
-    margin-left: 100px;
     padding: 40px;
-    width: 90%;
   }
 }
 @media screen and (max-width: 320px) {
-  #experience{
-    width: 115%;
-  }
   .check{
-    margin-left: 330px;
+    margin-left: 0px;
   }
 }

@@ -33,6 +33,11 @@
   text-align: center;
 }
 
+.edit-button{
+  padding: 20px;
+  text-align: center;
+}
+
 .user-table{
   border: 1px solid;
   margin : 20px auto;
@@ -102,7 +107,7 @@
      margin: 0 auto;
    }
    .edit-user{
-     margin: 10px 120px;
+     height: 100vh;
    }
    .unsubscribe-box{
      width: 100vw;
@@ -110,8 +115,3 @@
    }
 }
 
- @media screen and (max-width: 375px) {
-   .edit-user{
-     margin: 10px 100px;
-   }
-}

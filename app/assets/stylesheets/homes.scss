@@ -19,23 +19,24 @@
 
 }
 
-.botton-box{
-  padding: 20px;
-  text-shadow:1px 1px 3px #000000;
+.button-box{
+  padding: 10px;
+  text-shadow: 1px 1px 3px #000000;
   background-color: rgba(46, 46, 46, 0.5);
 }
+
   @media screen and (max-width: 2560px){
     main {
      height: 0px;
     }
     .top-box{
      width: 500px;
-     height: 300px;
-     margin: 70px auto;
+     height: 350px;
+     margin: 30px auto;
     }
     
-    .botton-box{
-      margin: 70px auto;
+    .button-box{
+      margin: 30px auto;
     }
 }
   @media screen and (max-width: 768px) {

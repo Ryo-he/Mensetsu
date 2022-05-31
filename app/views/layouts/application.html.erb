@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Success Job Hunting!!</title>
+    <title>Job!Job!!Job!!!</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,11 +16,10 @@
   <body class="d-flex flex-column vh-100">
   <header class="shadow-sm bg-white">
   <nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container">
     <%= link_to root_path do %>
-    <h3 class = "title-text">Success! Job Hunting</h3>
+    <h3 class = "title-text">Job!Job!!Job!!!</h3>
     <% end %>
-
+  <div class="container">
     <%= link_to experiences_path do %>
     <i class="fa-solid fa-list icon"></i>
     <p class = "text-black text-list">投稿一覧</p>
@@ -53,6 +52,11 @@
   </header>
     <%= yield %>
   <main></main>
+  <span id="back">
+    <a href="#">
+    <%= image_tag asset_path('arrow.png'), data: {"turbolinks"=>false},size: "50x50" %>
+    </a>
+  </span>
   <footer class="bg-dark text-white pt-5 pb-4">
   <div class="container">
   <div class="row no-gutters">

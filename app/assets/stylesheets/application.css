@@ -13,15 +13,23 @@
  *= require_tree .
  *= require_self
  */
-.footer-box {
+body{
   display: flex;
-  flex-direction: column;
-  min-width: 580px;
+  flex-flow: column;
+  min-height: 100%;
+  width: 100vw;
+  margin: 0 auto;
 }
 
-footer {
-  margin-top: 110px;
-  width: 100%;
+main {
+  flex: 1;
+}
+header{
+  width: 100vw;
+}
+footer{
+  width: 100vw;
+  margin-top: 80px;
 }
 
 a {
@@ -33,7 +41,7 @@ a {
   margin: 0 30px;
   color: black;
   font-family: "Font Awesome 5 Free";
-  text-decoration:none; 
+  text-decoration:none;
 }
 
 .title-text{
@@ -52,63 +60,7 @@ a {
   margin: 0 auto;
 }
 
- @media screen and (max-width: 1024px) {
-  header {
-    width: 100%;
-  }
-  
-  footer{
-    width: 100%;
-  }
-  
-  body{
-    width: 100%;
-  }
-  
-  .footer-box{
-    width: 100%;
-  }
-}
-@media screen and (max-width: 425px) {
-  header {
-    width: 120%;
-  }
-  
-  footer{
-    margin-top: 500px;
-    width: 120%;
-  }
-  
-  body{
-    width: 120%;
-  }
-  
-  .footer-box{
-    width: 120%;
-  }
-}
 
-@media screen and (max-width: 375px){
-  footer{
-    margin-top: 600px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  header {
-    width: 130%;
-  }
-  footer{
-    width: 130%;
-  }
-  .footer-box{
-    width: 130%;
-  }
-  
-  footer{
-    margin-top: 800px;
-  }
-}
 
 
 

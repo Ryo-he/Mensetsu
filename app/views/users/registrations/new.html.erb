@@ -8,8 +8,11 @@
 <div class="name-field">
 <%= f.label '名前' %></br>
 <%= f.label '（姓）'%>
+<br class="pc_hide">
 <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+<br class="pc_hide">
 <%= f.label '（名）' %>
+<br class="pc_hide">
 <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
 </div>
 

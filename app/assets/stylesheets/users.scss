@@ -11,7 +11,7 @@
   width: 100%;
   height: 350px;
   margin: 70px auto;
-  padding: 50px;
+  padding: 20px;
   text-align: center;
 }
 
@@ -35,7 +35,7 @@
 
 .user-table{
   border: 1px solid;
-  margin :20px auto;
+  margin : 20px auto;
   width: 680px;
 }
 
@@ -51,7 +51,8 @@
 
 .list-table{
   border: 1px solid;
-  margin :20px 335px;
+  margin : 20px auto;
+  width: 680px;
 }
 
 
@@ -75,61 +76,42 @@
 }
 
  @media screen and (max-width: 768px) {
-   .list-table{
-     margin: 0px auto;
-     width: 680px;
-   }
    .user-show{
      text-align: center;
      margin: 0 80px;
    }
 }
- @media screen and (max-width: 425px) {
-  .user-table{
-     width: 120%;
-     margin: 0 auto;
+ @media screen and (max-width: 700px) {
+   .user-table{
+     width: 100vw;
+     height: 100vh;
+     margin: 0px;
    }
    .list-table{
-     width: 120%;
-    margin: 0 auto;
+     width: 100vw;
+     height: 100vh;
+     margin: 0px;
    }
    .user-button{
-     width: 120%;
-     margin: 0 auto;
+     width: 100vw;
+     margin: 0px;
    }
    .user-show{
      text-align: center;
-     width: 120%;
+     width: 100vw;
      margin: 0 auto;
    }
    .edit-user{
      margin: 10px 120px;
    }
    .unsubscribe-box{
-    margin: 70px;
-    text-align: none;
+     width: 100vw;
+     height: 100vh;
+   }
 }
-}
+
  @media screen and (max-width: 375px) {
    .edit-user{
      margin: 10px 100px;
-   }
-}
- @media screen and (max-width: 320px) {
-  .user-table{
-     margin-left: 20px;
-   }
-   .list-table{
-     margin-left: 20px;
-   }
-   .user-button{
-     margin: 0px auto;
-   }
-   .user-show{
-     text-align: center;
-     margin: 0px;
-   }
-   .edit-user{
-     margin: 10px 80px;
    }
 }

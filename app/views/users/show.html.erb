@@ -44,7 +44,7 @@
 <% if @user == current_user %>
 <div class = "user-button">
 <%= link_to users_unsubscribe_path do %>
-<button type="button" class="btn btn-danger" style="width:600px">退会する</button>
+<button type="button" class="btn btn-danger" style="width:100px">退会する</button>
 <% end %>
 </div>
 <% else %>
@@ -56,7 +56,7 @@
 <% if @user.admin? %>
 <% @user.admin == true %>
 <%= link_to genres_path do %>
-<button type="button" class="btn btn-primary" style="width:600px">業種一覧・追加</button>
+<button type="button" class="btn btn-primary" style="width:100px">業種追加</button>
 <% end %>
 <% else %>
 <% end %>
@@ -136,7 +136,7 @@
 <% if @user == current_user %>
 <div class = "user-button">
 <%= link_to new_experience_path do %>
-<button type="button" class="btn btn-primary" style="width:600px">投稿する</button>
+<button type="button" class="btn btn-primary" style="width:100px">投稿する</button>
 <% end %>
 </div>
 <% else %>

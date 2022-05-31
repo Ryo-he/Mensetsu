@@ -3,18 +3,18 @@
 <div class = "mx-auto"></div>
 <div class = "unsubscribe-box">
 <h2>本当に退会しますか？</h2>
-<p>退会後は他ユーザーの投稿は閲覧可能のままですが、</br>
-自身での投稿はできなくなります。</br>
-退会する場合は、「退会する」をクリックしてください。</p>
+<p><span>退会後は他ユーザーの投稿は閲覧可能のままですが、</br></span>
+<span>自身での投稿はできなくなります。</br></span>
+<span>退会する場合は、「退会する」をクリックしてください。</span></p>
 
 <div class = "unsubscribe-button">
 <%= link_to user_path(current_user.id), method: :delete, "data-confirm"=>"本当に退会しますか？" do%>
-<button type="button" class="btn btn-danger" style="width:350px">退会する</button>
+<button type="button" class="btn btn-danger" style="width:200px">退会する</button>
 <% end %>
 </div>
 
 <%= link_to user_path(current_user.id) do %>
-<button type="button" class="btn btn-success" style="width:350px">キャンセル</button>
+<button type="button" class="btn btn-success" style="width:200px">キャンセル</button>
 <% end %>
 
 </div>

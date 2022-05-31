@@ -9,31 +9,33 @@
 
 #top{
   background-image: image-url("fujiko0822.jpg.webp");
-}
-
-.top-box{
-  width: 600px;
-  height: 280px;
-  margin: 70px auto;
+  background-size: cover;
 }
 
 .text-box{
-  padding: 0 50px;
+  padding: 20px;
   text-shadow:1px 1px 3px #000000;
   background-color: rgba(46, 46, 46, 0.5);
 
 }
 
 .botton-box{
-  margin: 70px auto;
-  padding: 0 50px;
+  padding: 20px;
   text-shadow:1px 1px 3px #000000;
   background-color: rgba(46, 46, 46, 0.5);
 }
-
-  @media screen and (max-width: 1024px) {
-    #top {
-     width: 100%;
+  @media screen and (max-width: 2560px){
+    main {
+     height: 0px;
+    }
+    .top-box{
+     width: 500px;
+     height: 300px;
+     margin: 70px auto;
+    }
+    
+    .botton-box{
+      margin: 70px auto;
     }
 }
   @media screen and (max-width: 768px) {
@@ -41,30 +43,12 @@
      background-color: #CCCCCC;
      background-image: none;
     }
-}
-  @media screen and (max-width: 425px) {
-    .text-box {
-     width: 100%;
-     margin-left: 50px;
-    }
-    .botton-box {
-     width: 100%;
-     margin-left: 50px;
-    }
+    .top-box{
+     width: 100vw;
+     height: 100vh;
+     margin-top: 20px;
+   }
 }
 
-  @media screen and (max-width: 375px) {
-    #top {
-     width: 115%;
-    }
-}
-  @media screen and (max-width: 320px){
-    .text-box {
-     margin-left: 80px;
-    }
-    .botton-box {
-     margin-left: 80px;
-    }
-  }
 
 

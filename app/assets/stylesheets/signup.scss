@@ -10,18 +10,12 @@
 
 .signup-box{
   background-color: white;
-  margin: 70px auto;
-  width: 650px;
-  height: 500px;
   padding: 10px;
   border: 2px solid rgba(0,0,0,0.1);
 }
 
 .login-box{
   background-color: white;
-  margin: 70px auto;
-  width: 400px;
-  height: 300px;
   padding: 10px;
   border: 2px solid rgba(0,0,0,0.1);
 }
@@ -50,23 +44,72 @@
   text-align: center;
 }
 
- @media screen and (max-width: 425px) {
-  #signup{
-   width: 120%;
-  }
+.pc_hide{
+  display: none;
+}
+
+ @media screen and (max-width: 2560px) {
   .signup-box{
-   width: 120%;
-   height: 80%;
+   margin: 70px auto;
+   width: 650px;
+   height: 500px;
+   padding: 10px;
   }
+
   .login-box{
-   margin-left: 140px;
+   margin: 70px auto;
+   width: 400px;
+   height: 300px;
+   padding: 10px;
+  }
 }
+ @media screen and (max-width: 768px) {
+ .signup-box{
+   margin-top: 70px;
+   width: 100vw;
+   height: 100vh;
+   padding: 50px;
+ }
+
+  .login-box{
+   margin-top: 70px;
+   width: 100vw;
+   height: 100vh;
+  }
 }
- @media screen and (max-width: 320px) {
+@media screen and (max-width: 676px){
   .signup-box{
-   width: 130%;
-   height: 80%;
-   margin-left: 10px;
+   padding: 10px;
+ }
+
+  .login-box{
+   padding: 10px;
   }
 }
 
+@media screen and (max-width: 596px){
+  .pc_hide{
+    display: block;
+  }
+  
+  .another-field{
+   text-align: center;
+   margin: 0 auto;
+  }
+  
+  .name-field{
+   text-align: center;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .login-button{
+   padding: 40px auto;
+   text-align: center;
+  }
+
+  .signup-button{
+   padding: 30px auto;
+   text-align: center;
+  }
+}

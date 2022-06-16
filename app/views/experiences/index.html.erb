@@ -4,7 +4,6 @@
 <div class = "col-lg-6 col-md-12">
 <h3 class = "experience-list">みんなの投稿</h3>
 <%= render 'sort'%>
-
 <%= render 'sort_result', experiences: @experiences %>
 </div>
 
@@ -14,7 +13,7 @@
 </div>
 <div class = "search-form">
 <%= form_with url: experiences_path, method: :get, local: true do |f| %>
-<%= f.text_field :keyword, value: @keyword %>
+<%= f.text_field :keyword, value: @keyword, placeholder: "検索ワードを入力" %>
 <%= f.submit "検索" %>
 <% end %>
 </div>
